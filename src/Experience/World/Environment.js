@@ -18,17 +18,17 @@ export default class Environment
         this.setAmbientLight()
         this.setSunLight()
         this.setRedLight()
-        this.setEnvironmentMap()
+        // this.setEnvironmentMap()
     }
 
     setSunLight()
     {
-        this.sunLight = new THREE.DirectionalLight('#ffffff', 1)
+        this.sunLight = new THREE.DirectionalLight('#ffffff', 1.5)
         this.sunLight.castShadow = true
         this.sunLight.shadow.camera.far = 15
         this.sunLight.shadow.mapSize.set(1024, 1024)
         this.sunLight.shadow.normalBias = 0.05
-        this.sunLight.position.set(3.5, 2, - 1.25)
+        this.sunLight.position.set(3.5, 2, 2)
         this.scene.add(this.sunLight)
 
         // Debug
@@ -85,7 +85,7 @@ export default class Environment
     }
 
     setAmbientLight() {
-        this.ambientLight = new THREE.AmbientLight(0xFFFFFF, 1.0)
+        this.ambientLight = new THREE.AmbientLight(0xFFFFFF, 0.2)
         this.scene.add(this.ambientLight)
     }
 
@@ -102,7 +102,7 @@ export default class Environment
         {
             this.scene.traverse((child) =>
             {
-                if(child instanceof THREE.Mesh && child.material instanceof THREE.MeshStandardMaterial)
+                if(child instanceof THREE.Mesh )
                 {
                     child.material.envMap = this.environmentMap.texture
                     child.material.envMapIntensity = this.environmentMap.intensity

@@ -31,12 +31,41 @@ export default class Team {
             console.log(child.name.includes("team-photo"), child instanceof THREE.Mesh)
             if(child instanceof THREE.Mesh && child.name.includes("team-photo") ){
                 this.index = child.name.split("team-photo")
-                // this.resources.items[`teamTexture${this.index[1]}`].outputEncoding = THREE.sRGBEncoding
-                this.photoMaterial = new THREE.MeshBasicMaterial({
+                // this.resources.items[`teamTexture${this.index[1]}`].flipY = false
+                this.photoMaterial = new THREE.MeshPhysicalMaterial({
                     map : this.resources.items[`teamTexture${this.index[1]}`],
-                    color : 0x555555
+                    reflectivity : 1,
+                    transmission : 0.0,
+                    roughness : 0.3,
+                    metalness : 0.2,
+                    clearcoat : 1,
+                    clearcoatRoughness : 0,
+                    color : new THREE.Color(0xffffff),
+                    ior : 2,
+                    thickness : 10.0,
+
                 })
                 child.material = this.photoMaterial
+                if(this.debug.active){
+                    this.debugFolder.add(child.material, "reflectivity").min(-1).max(5).step(0.001)
+                    this.debugFolder.add(child.material, "transmission").min(-1).max(5).step(0.001)
+                    this.debugFolder.add(child.material, "roughness").min(-1).max(5).step(0.001)
+                    this.debugFolder.add(child.material, "metalness").min(-1).max(5).step(0.001)
+                    this.debugFolder.add(child.material, "clearcoat").min(-1).max(5).step(0.001)
+                    this.debugFolder.add(child.material, "clearcoatRoughness").min(-1).max(5).step(0.001)
+                    this.debugFolder.add(child.material, "ior").min(-1).max(5).step(0.001)
+                    this.debugFolder.add(child.material, "thickness").min(-20).max(20).step(0.01)
+                    this.debugFolder.addColor(child.material, "color")
+                }
+                // this.teamMaterial =  new THREE.MeshPhysicalMaterial(
+                //     {
+                //         color : "red",
+                //         emissiveMap : this.resources.items[`teamTexture${this.index[1]}`], 
+                //         emissiveIntensity : 1,
+                //         map : this.resources.items[`teamTexture${this.index[1]}`],
+                //         emissive : new THREE.Color("#555555")
+                //     })
+                // child.receiveShadow = true
             }
         })
 
