@@ -75,6 +75,9 @@
 
 .petals-loop{
     z-index: 100;
+    min-width: 100vw;
+    min-height: 100vh;
+    aspect-ratio: 16/9;
     mix-blend-mode: screen;
 }
 

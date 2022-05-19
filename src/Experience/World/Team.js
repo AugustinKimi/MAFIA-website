@@ -31,7 +31,7 @@ export default class Team {
             console.log(child.name.includes("team-photo"), child instanceof THREE.Mesh)
             if(child instanceof THREE.Mesh && child.name.includes("team-photo") ){
                 this.index = child.name.split("team-photo")
-                // this.resources.items[`teamTexture${this.index[1]}`].flipY = false
+                this.resources.items[`teamTexture${this.index[1]}`].flipY = false
                 this.photoMaterial = new THREE.MeshPhysicalMaterial({
                     map : this.resources.items[`teamTexture${this.index[1]}`],
                     reflectivity : 1,
