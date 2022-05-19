@@ -1,0 +1,29 @@
+#about{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* margin-top: 20vh; */
+    margin-top: 80vh;
+}
+
+.content-container{
+    width: 50%;
+    max-width: 600px;
+}
+
+#about .title{
+    font-size: 40px;
+    line-height: 46px;
+    font-family: 'Akira';
+    margin-bottom: 20px;
+}
+
+.title span{
+    font-family: 'Akira';
+    color: #d7350d;
+}
+
+.content{
+
+    line-height: 200%;
+}

@@ -1,0 +1,140 @@
+@font-face
+{
+    font-family: 'Akira';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../static/fonts/Akira-Expanded-Demo.otf');
+}
+
+@font-face
+{
+    font-family: 'BankPrinter';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../static/fonts/F25_Bank_Printer.ttf');
+}
+@import url('./styles/about.css');
+@import url('./styles/home.css');
+@import url('./styles/roadmap.css');
+
+
+
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: "BankPrinter",Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    font-weight: 300;
+    color: white;
+    background-color: none;
+    text-decoration: none;
+    list-style: none;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+html,
+body
+{
+    background: black;
+    scroll-behavior: smooth;
+}
+
+body{
+    scroll-snap-type: y mandatory;
+}
+
+.webgl
+{
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+
+.navbar{
+    position: fixed;
+    padding: 0  4rem;
+    z-index: 1000;
+    width: 100vw;
+    height: 80px;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.navbar svg path{
+    fill: white;
+}
+
+.navbar .logo{
+    height: 30px;
+    object-fit: contain;
+    margin-right: 2rem;
+}
+
+.links-container{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10%;
+}
+
+.link{
+    margin: 0 2rem;
+    font-family: 'Akira';
+    text-transform: uppercase;
+}
+
+.social-container{
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+}
+
+.social-link{
+    margin: 0 0.5rem;
+}
+.section{
+    position: relative;
+    z-index: 10;
+    /* font-size: 60px; */
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 60vh 0;
+    padding: 0 10vw;
+}
+
+#team{
+    height: 200vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.team-title{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 160px;
+    font-size: 40px;
+    line-height: 46px;
+    font-family: 'Akira';
+    margin-bottom: 20px;
+}
+
+
+
+

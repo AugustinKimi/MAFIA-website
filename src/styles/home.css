@@ -1,0 +1,129 @@
+
+#home{
+    z-index: 100;
+    position: fixed;
+    margin: 0;
+}
+
+.backgroundContainer{
+    width: 100%;
+    height: 100%;
+}
+
+.backgroundContainer>*{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.backgroundContainer :nth-child(2),
+.backgroundContainer :nth-child(3){
+    width: 100%;
+    height: 100%;
+}
+
+.backgroundContainer :nth-child(2){
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(7px);
+}
+
+
+.backgroundContainer :nth-child(3){
+    background: rgba(0, 0, 0, 0.8);
+    mix-blend-mode: color;
+}
+
+.backgroundContainer .bg{
+    height: 100%;
+    min-width: 100%;
+}
+
+
+.title-container{
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.big-title{
+    font-size: 13vw;
+    line-height: 100%;
+    text-transform: uppercase;
+    font-family: 'Akira';
+}
+
+.big-title .outline{
+    font-family: 'Akira';
+    color: #ffffff00;
+    -webkit-text-stroke: 1px #d7350d;
+}
+.big-title .outline:first-child{
+    font-family: 'Akira';
+    margin-right: 10vw;
+}
+
+.petals-loop{
+    z-index: 100;
+    mix-blend-mode: screen;
+}
+
+
+.avatar{
+    position: absolute;
+    z-index: 100;
+    bottom : 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    aspect-ratio: 877/1020;
+    max-height: 90vh;
+    max-width: 95vw;
+}
+
+.scroll-button-container{
+    position: absolute;
+    z-index: 100;
+    bottom: 50px;
+    right: 50px;
+    display: flex;
+
+    flex-direction: column-reverse;    
+    transform:rotate(90deg) translateX(-50%); 
+}
+
+.scroll-button-container>span{
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .32rem;
+    font-weight: 300;
+}
+
+.arrow {
+    margin-bottom: 10px;
+    /* animation: animation-scroll 1s ease 0 infinite ; */
+    animation-duration: 2s;
+    animation-delay: 0;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-name: animation-scroll;
+}
+
+@keyframes animation-scroll {
+    0%{
+        transform: translateX(-4px);
+    }
+    50%{
+        transform: translateX(4px);
+    }
+    100%{
+        transform: translateX(-4px);
+    }
+}
