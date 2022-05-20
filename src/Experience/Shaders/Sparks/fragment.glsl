@@ -4,7 +4,8 @@ varying float vRotation;
 varying float vRotationSpeed;
 
 uniform vec3 uColor;
-uniform vec3 uAccentColor;
+uniform vec3 uInsideColor;
+uniform vec3 uOutsideColor;
 uniform float uTime;
 
 
@@ -27,7 +28,7 @@ void main(){
     strength = 0.05 / (distance(vec2(newUv.x, (newUv.y - 0.5) * 3.0 + 0.5), vec2(0.5)));
 
     float fadeAlpha = 1.0 - smoothstep(-1.8, 0.0, vPosition.y);
-    vec3 color = mix(uColor, uAccentColor, strength);
+    vec3 color = mix(uOutsideColor, uInsideColor, strength  );
 
     gl_FragColor = vec4(color, (fadeAlpha * strength) - 0.3);
 }

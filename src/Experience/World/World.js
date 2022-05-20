@@ -5,7 +5,7 @@ import Sparks from './Sparks.js'
 import RedBackground from './RedBackground.js'
 import Smoke from './Smoke.js'
 import Team from './Team.js'
-
+import Fireflies from './Fireflies.js'
 export default class World
 {
     constructor()
@@ -21,6 +21,7 @@ export default class World
             this.gunAndBag = new BagAndGun()
             this.sparks = new Sparks()
             this.smoke = new Smoke()
+            this.fireflies = new Fireflies()
             this.team = new Team()
             this.sphereBackground = new RedBackground()
             this.environment = new Environment()
@@ -28,6 +29,7 @@ export default class World
     }
 
     update(){
+        if(this.fireflies) this.fireflies.update()
         if(this.gunAndBag) this.gunAndBag.update()
         if(this.team) this.team.update()
         if(this.smoke) this.smoke.update()

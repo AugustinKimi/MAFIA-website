@@ -8,14 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <title>Elrond Mafia</title>
 </head>
-<body id="home-target">
+<body >
+    <span id="home"></span>
     <canvas class="webgl"></canvas>
     <nav  class="navbar">
-        <a href="#home-target">
+        <a href="#home">
             <img class="logo"  src="../static/images/elrond-mafia-logo-white.webp" alt="ELrond mafia logo">
         </a>
         <div class="links-container">
-            <a class="link" href="#home-target">Home</a>
+            <a class="link" href="#home">Home</a>
             <a class="link" href="#about">About</a>
             <a class="link" href="#roadmap">Roadmap</a>
             <a class="link" href="#team">Team</a>
@@ -35,7 +36,7 @@
         
     </nav>
 
-    <section id="home" class="section">
+    <section id="home-section" class="section">
         <div class="backgroundContainer">
             <img src="../static/images/city-bg.webp" alt="City background" class="bg"/>
             <div></div>
@@ -47,18 +48,19 @@
         </div>
         <video class="petals-loop" loop="true" muted autoplay="true" src="../static/images/petals_loop.webm"></video>
         <img class="avatar" src="../static/images/avatar.webp" alt="Avatar">
-        <div class="scroll-button-container">
+        <a href="#about" class="scroll-button-container">
             <span>Scroll down</span>
             <svg class="arrow" width="129" height="7" viewBox="0 0 129 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M128.5 3.5L123.5 0.613244L123.5 6.38675L128.5 3.5ZM20.5 4L124 4L124 3L20.5 3L20.5 4Z" fill="white"/>
                 <line x1="0.5" y1="4" x2="15.5" y2="4" stroke="white"/>
             </svg>
-        </div>
+        </a>
     </section>
 
     <section id="about" class="section">
         <div class="content-container">
             <h2 class="title">A social club <br> <span>Play To Earn</span></h2>
+            <p class="content">We are an organization that originated in #Elrond, the rest of the world see us as criminal we are just building Web 3. Who's ready to be a part of the story ?<br>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
             <p class="content">We are an organization that originated in #Elrond, the rest of the world see us as criminal we are just building Web 3. Who's ready to be a part of the story ?<br>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
         </div>
     </section>

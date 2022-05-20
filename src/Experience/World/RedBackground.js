@@ -14,8 +14,8 @@ export default class RedBackground{
         this.time = this.experience.time
         this.sizes = this.experience.sizes
         this.debugObject = {}
-        this.debugObject.darkColor =  "#050000"
-        this.debugObject.accentColor =  "#ff0000"
+        this.debugObject.darkColor =  "#100909"
+        this.debugObject.accentColor =  "#ff5900"
 
         if(this.debug.active)
         {

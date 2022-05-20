@@ -66,13 +66,14 @@ export default class Environment
     
     setRedLight(){
         this.redPointLight = new THREE.PointLight()
-        this.redPointLight.color = new THREE.Color("#ff0000")
+        this.redPointLight.color = new THREE.Color("#ff0900")
         this.redPointLight.intensity = 5
         this.redPointLight.distance = 50
         this.redPointLight.decay = 2
         this.redPointLight.position.set(0, -2, 1)
         this.scene.add(this.redPointLight)
         if(this.debug.active){
+            this.debugFolder.addColor(this.redPointLight, "color")
             this.debugFolder.add(this.redPointLight, "intensity").min(0).max(100).step(0.01)
             this.debugFolder.add(this.redPointLight, "distance").min(0).max(100).step(0.01)
             this.debugFolder.add(this.redPointLight, "decay").min(0).max(2).step(0.001)

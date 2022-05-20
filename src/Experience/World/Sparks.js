@@ -56,9 +56,9 @@ export default class Sparks{
         this.sparksMaterial = new THREE.ShaderMaterial({
             uniforms : {
                 uTime : {value : 0},
-                uInsideColor : { value : new THREE.Color("#FFFFFF")},
                 uColor : { value : new THREE.Color("#ff0000")},
-                uAccentColor : {value : new THREE.Color("#FF2600")}
+                uInsideColor : { value : new THREE.Color("#ff1900")},
+                uOutsideColor : {value : new THREE.Color("#FF2600")}
             },
             fragmentShader,
             vertexShader,
@@ -79,9 +79,9 @@ export default class Sparks{
 
         if(this.debug.active){
 
-            this.debugFolder.addColor(this.sparksParticules.material.uniforms.uColor, "value")
-            this.debugFolder.addColor(this.sparksParticules.material.uniforms.uInsideColor, "value")
-            this.debugFolder.addColor(this.sparksParticules.material.uniforms.uAccentColor, "value")
+            // this.debugFolder.addColor(this.sparksParticules.material.uniforms.uColor, "value").name("uColor")
+            this.debugFolder.addColor(this.sparksParticules.material.uniforms.uInsideColor, "value").name("uInsideColor")
+            this.debugFolder.addColor(this.sparksParticules.material.uniforms.uOutsideColor, "value").name("uOutsideColor")
         }
 
     }

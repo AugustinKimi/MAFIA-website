@@ -45,6 +45,19 @@ export default class Team {
                     thickness : 10.0,
 
                 })
+
+                this.photoMaterial.map = this.resources.items[`teamTexture${this.index[1]}`],
+                this.photoMaterial.reflectivity = 1,
+                this.photoMaterial.transmission = 0.0,
+                this.photoMaterial.roughness = 0.3,
+                this.photoMaterial.metalness = 0.2,
+                this.photoMaterial.clearcoat = 1,
+                this.photoMaterial.clearcoatRoughness = 0,
+                this.photoMaterial.color = new THREE.Color(0xffffff),
+                this.photoMaterial.ior = 2,
+                this.photoMaterial.thickness = 10.0,
+
+
                 child.material = this.photoMaterial
                 if(this.debug.active){
                     this.debugFolder.add(child.material, "reflectivity").min(-1).max(5).step(0.001)
@@ -57,15 +70,6 @@ export default class Team {
                     this.debugFolder.add(child.material, "thickness").min(-20).max(20).step(0.01)
                     this.debugFolder.addColor(child.material, "color")
                 }
-                // this.teamMaterial =  new THREE.MeshPhysicalMaterial(
-                //     {
-                //         color : "red",
-                //         emissiveMap : this.resources.items[`teamTexture${this.index[1]}`], 
-                //         emissiveIntensity : 1,
-                //         map : this.resources.items[`teamTexture${this.index[1]}`],
-                //         emissive : new THREE.Color("#555555")
-                //     })
-                // child.receiveShadow = true
             }
         })
 
@@ -97,18 +101,18 @@ export default class Team {
             scrollTrigger : this.scrollTriggerObject1, 
             x :  5,
         })
-        this.scrollTriggerObject1 = { 
+        this.scrollTriggerObject2 = { 
             trigger : '#team',
             start : "top center",
             // end : "top bottom",
-    toggleActions : "restart none none reverse",
+            toggleActions : "restart none none reverse",
             markers : true,
             // scrub : 2,
             duration : 1,
         }
         gsap.to(this.teamModel.scene.position,
             {
-                scrollTrigger : this.scrollTriggerObject1, 
+                scrollTrigger : this.scrollTriggerObject2, 
                 y :  0.6,
             })
     }

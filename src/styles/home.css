@@ -1,11 +1,16 @@
 
-#home{
+#home-section{
     z-index: 100;
     position: fixed;
     margin: 0;
     top: 0;
     left: 0;
 
+}
+
+#home{
+    position: absolute;
+    top: 0;
 }
 
 .backgroundContainer{
