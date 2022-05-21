@@ -31,6 +31,7 @@
     background-color: none;
     text-decoration: none;
     list-style: none;
+    border : none;
 }
 
 html{
@@ -42,6 +43,7 @@ body
 {
     background: black;
     scroll-behavior: smooth;
+    cursor: none;
 }
 
 body{
@@ -57,6 +59,15 @@ body{
     outline: none;
 }
 
+.cursor{
+    position: fixed;
+    z-index: 100000;
+    top: 50%;
+    left: 50;
+    width: 30px;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+}
 .navbar{
     position: fixed;
     padding: 0  4rem;
