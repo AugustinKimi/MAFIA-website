@@ -9,15 +9,31 @@ export default class Scroll{
 
         
         this.homePage()
+        this.aboutPage()
+        this.roadmapPage()
+        this.teamPage()
+        this.faqPage()
     }
 
     homePage(){
         const scrollTrigger = {
             trigger : '#about',
-            start : "bottom 150%",
+            start : "top bottom ",
             toggleActions : "restart none none reverse",
-            // markers : true
         }
+
+        // ScrollTrigger.create({
+        //     trigger: '#about',
+        //     start : "top top",
+        //     onLeaveBack: () => window.scroll(0, 0)
+        //   });
+        // ScrollTrigger.create({
+        //     trigger: '#about',
+        //     start : "top bottom ",
+        //     // onEnter : () => window.scroll(0, window.innerHeight + 20),
+        // });
+
+
         gsap.to(".big-title:first-child",{
             scrollTrigger,
             x : "150%",
@@ -65,6 +81,119 @@ export default class Scroll{
             duration : 0.5,
             ease : "power1.out"
         })
+    }
 
+
+    aboutPage()
+    {
+        const tl = gsap.timeline({
+            scrollTrigger : {
+                trigger : '#about',
+                start : "top-100px center ",
+                toggleActions : "restart none none reverse",
+            }
+        })
+        tl
+        .from(".title", {
+            x : -200,
+            opacity : 0,
+            duration : 0.6
+        })
+        .from(".content",{
+            x :200,
+            opacity : 0,
+            duration : 0.6,
+        }, ">-0.4")
+    }
+
+    roadmapPage(){
+        const tl = gsap.timeline({
+            scrollTrigger : {
+                trigger : '#roadmap',
+                start : "top center ",
+                toggleActions : "restart none none reverse",
+            }
+        })
+        tl
+        .from(".roadmap-title", {
+            x : -200,
+            opacity : 0,
+            duration : 0.6
+        })
+        .from(".phase-card:nth-child(1)",{
+            y :200,
+            opacity : 0,
+            duration : 0.6,
+        }, ">-0.6")
+        .from(".phase-card:nth-child(2)",{
+            y :200,
+            opacity : 0,
+            duration : 0.6,
+        }, ">-0.2")
+        .from(".phase-card:nth-child(3)",{
+            y :200,
+            opacity : 0,
+            duration : 0.6,
+        }, ">-0.2")
+    }
+
+    teamPage(){
+        gsap.from(".team-title", {
+            scrollTrigger : {
+                trigger : '#team',
+                start : "top center ",
+                toggleActions : "restart none none reverse",
+            },
+            x : -200,
+            opacity : 0,
+            duration : 0.6
+        })
+    }
+
+    faqPage(){
+        const tl = gsap.timeline({
+            scrollTrigger : {
+                trigger : '#faq',
+                start : "top center ",
+                toggleActions : "restart none none reverse",
+            }
+        })
+
+        tl
+        .from(".faq-title", {
+            x : -200,
+            opacity : 0,
+            duration : 0.6
+        })
+        .from(".faq-img", {
+            clipPath : 'polygon(0 50%, 100% 50%, 100% 50%, 0 50%)',
+            opacity : 0,
+            duration : 1
+        }, ">-0.6")
+        .from(".question:nth-child(1)",{
+            x :200,
+            opacity : 0,
+            duration : 0.4,
+        }, ">-0.6")
+        .from(".question:nth-child(2)",{
+            x :200,
+            opacity : 0,
+            duration : 0.4,
+        }, ">-0.2")
+        .from(".question:nth-child(3)",{
+            x :200,
+            opacity : 0,
+            duration : 0.4,
+        }, ">-0.2")
+        .from(".question:nth-child(4)",{
+            x :200,
+            opacity : 0,
+            duration : 0.4,
+        }, ">-0.2")
+        .from(".question:nth-child(5)",{
+            x :200,
+            opacity : 0,
+            duration : 0.4,
+        }, ">-0.2")
     }
 }

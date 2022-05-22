@@ -106,7 +106,7 @@ export default class Team {
             start : "top center",
             // end : "top bottom",
             toggleActions : "restart none none reverse",
-            markers : true,
+            // markers : true,
             // scrub : 2,
             duration : 1,
         }

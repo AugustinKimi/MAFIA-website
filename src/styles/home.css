@@ -82,7 +82,7 @@
     z-index: 100;
     min-width: 100vw;
     min-height: 100vh;
-    aspect-ratio: 16/9;
+    object-fit: cover;
     mix-blend-mode: screen;
 }
 
@@ -95,6 +95,7 @@
     transform: translate(-50%, 0);
     aspect-ratio: 877/1020;
     max-height: 90vh;
+    /* height: 100%; */
     max-width: 95vw;
 }
 

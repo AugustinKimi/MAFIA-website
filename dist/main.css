@@ -1,0 +1,468 @@
+#about{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* margin-top: 20vh; */
+    margin-top: 80vh;
+}
+
+.content-container{
+    width: 50%;
+    max-width: 600px;
+}
+
+#about .title{
+    font-size: 40px;
+    line-height: 46px;
+    font-family: 'Akira';
+    margin-bottom: 20px;
+}
+
+.title span{
+    font-family: 'Akira';
+    color: #d7350d;
+}
+
+.content{
+
+    line-height: 200%;
+}
+
+#home-section{
+    z-index: 100;
+    position: fixed;
+    margin: 0;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+#home{
+    position: absolute;
+    top: 0;
+}
+
+.backgroundContainer{
+    width: 100%;
+    height: 100%;
+}
+
+.backgroundContainer>*{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.backgroundContainer :nth-child(2),
+.backgroundContainer :nth-child(3){
+    width: 100%;
+    height: 100%;
+}
+
+.backgroundContainer :nth-child(2){
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(7px);
+}
+
+
+.backgroundContainer :nth-child(3){
+    background: rgba(0, 0, 0, 0.8);
+    mix-blend-mode: color;
+}
+
+.backgroundContainer .bg{
+    height: 100%;
+    min-width: 100%;
+}
+
+
+.title-container{
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.big-title{
+    font-size: 13vw;
+    line-height: 100%;
+    text-transform: uppercase;
+    font-family: 'Akira';
+}
+
+.big-title .outline{
+    font-family: 'Akira';
+    color: #ffffff00;
+    -webkit-text-stroke: 1px #d7350d;
+}
+.big-title .outline:first-child{
+    font-family: 'Akira';
+    margin-right: 10vw;
+}
+
+.petals-loop{
+    z-index: 100;
+    min-width: 100vw;
+    min-height: 100vh;
+    aspect-ratio: 16/9;
+    mix-blend-mode: screen;
+}
+
+
+.avatar{
+    position: absolute;
+    z-index: 100;
+    bottom : 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    aspect-ratio: 877/1020;
+    max-height: 90vh;
+    max-width: 95vw;
+}
+
+.scroll-button-container{
+    position: absolute;
+    z-index: 100;
+    bottom: 50px;
+    right: 50px;
+    display: flex;
+
+    flex-direction: column-reverse;    
+    transform:rotate(90deg) translateX(-50%); 
+}
+
+.scroll-button-container>span{
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .32rem;
+    font-weight: 300;
+}
+
+.arrow {
+    margin-bottom: 10px;
+    /* animation: animation-scroll 1s ease 0 infinite ; */
+    animation-duration: 2s;
+    animation-delay: 0;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-name: animation-scroll;
+}
+
+@keyframes animation-scroll {
+    0%{
+        transform: translateX(-4px);
+    }
+    50%{
+        transform: translateX(4px);
+    }
+    100%{
+        transform: translateX(-4px);
+    }
+}
+#roadmap{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.roadmap-title{
+    font-size: 40px;
+    line-height: 46px;
+    font-family: 'Akira';
+    color: #d7350d;
+    margin-bottom: 60px;
+}
+
+.phases-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    gap: 30px;
+    width: 100%;
+}
+
+.phase-card{
+    /* max-width: 400px; */
+    flex: 1;
+    background: rgba(29, 29, 29, 0.4);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    padding:  20px;
+}
+
+.phase-title{
+    font-size: 24px;
+    line-height: 48px;
+    font-family: 'Akira';
+}
+
+.phase-content{
+    margin-bottom: 20px ;
+    line-height: 150%;
+    color: #bababa;
+}
+
+.phase-content:last-child{
+    margin: 0;
+}
+
+.phase-content .phase-content-title{
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #d7350d;
+}
+
+.phase-content .phase-content-title-secondary{
+    text-transform: uppercase;
+    font-weight: 900;
+    /* color: #d7350d; */
+}
+#faq{
+    background: #090909;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* transform: skew(10deg); */
+}
+
+.faq-title{
+    font-size: 40px;
+    line-height: 46px;
+    font-family: 'Akira';
+    margin-bottom: 80px;
+}
+
+.faq-container{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 60px;
+}
+
+.faq-img-container{
+    flex: 1;
+}
+
+.faq-img{
+    width: 100%;
+}
+
+.question-container{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.question{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 0%;
+    left: 0;
+    background: #111111;
+    border-radius: 15px;
+    overflow: hidden;
+    max-height: 60px;
+    transition: .3s ease;
+    
+}
+
+.question.isOpen{
+    max-height: 300px;
+}
+
+.faq-title-container{
+    min-height: 60px;
+    padding: 10px 20px;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.question-title{
+
+    font-family: "Akira";
+    font-size: 20px;
+}
+
+
+.arrow-container{
+    width: 20px;
+    height: 20px;
+    background : red;
+    border-radius: 40px;
+}
+
+
+.answer{
+    /* position: absolute;
+    top: 105%;
+    left: 0;
+    width: 100%; */
+    padding: 10px 20px;
+}
+
+@font-face
+{
+    font-family: 'Akira';
+    font-weight: normal;
+    font-style: normal;
+    src: url(ef5407c40345a26c.otf);
+}
+
+@font-face
+{
+    font-family: 'BankPrinter';
+    font-weight: normal;
+    font-style: normal;
+    src: url(assets/fonts/8c583f460cfa68ce.ttf);
+}
+
+
+
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: "BankPrinter",Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    font-weight: 300;
+    color: white;
+    background-color: none;
+    text-decoration: none;
+    list-style: none;
+    border : none;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+html,
+body
+{
+    background: black;
+    scroll-behavior: smooth;
+    cursor: none;
+}
+
+body{
+    scroll-snap-type: y mandatory;
+}
+
+.webgl
+{
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+
+.cursor{
+    position: fixed;
+    z-index: 100000;
+    top: 50%;
+    left: 50;
+    width: 30px;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+}
+.navbar{
+    position: fixed;
+    padding: 0  4rem;
+    z-index: 1000;
+    width: 100vw;
+    height: 80px;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.navbar svg path{
+    fill: white;
+}
+
+.navbar .logo{
+    height: 30px;
+    object-fit: contain;
+    margin-right: 2rem;
+}
+
+.links-container{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10%;
+}
+
+.link{
+    margin: 0 2rem;
+    font-family: 'Akira';
+    text-transform: uppercase;
+}
+
+.social-container{
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+}
+
+.social-link{
+    margin: 0 0.5rem;
+}
+.section{
+    position: relative;
+    z-index: 10;
+    /* font-size: 60px; */
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 60vh 0;
+    padding: 0 10vw;
+}
+
+#team{
+    height: 200vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.team-title{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 160px;
+    font-size: 40px;
+    line-height: 46px;
+    font-family: 'Akira';
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+/*# sourceMappingURL=main.css.map*/
