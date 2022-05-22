@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import Experience from "../Experience";
-import vertexShader from "../shaders/fireflies/vertex.glsl";
-import fragmentShader from "../shaders/fireflies/fragment.glsl";
+import vertexShader from "../shaders/Fireflies/vertex.glsl";
+import fragmentShader from "../shaders/Fireflies/fragment.glsl";
 
 export default class Fireflies {
   constructor() {
