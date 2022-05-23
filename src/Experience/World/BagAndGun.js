@@ -105,9 +105,9 @@ export default class BagAndGun {
             })
     }
     update(){
-        this.gunModel.scene.position.y += Math.sin(this.time.elapsed * 0.0015) * 0.0001
-        this.bagModel.scene.position.y += Math.sin(this.time.elapsed * 0.0025) * 0.0001
-        this.gunModel.scene.rotation.y += Math.sin(this.time.elapsed * 0.0018) * 0.0001
-        this.bagModel.scene.rotation.y += Math.sin(this.time.elapsed * 0.0022) * 0.0001
+        this.gunModel.scene.position.y += Math.sin(this.time.elapsed * 0.0015) * 0.0003
+        this.bagModel.scene.position.y += Math.sin(this.time.elapsed * 0.0025) * 0.0003
+        this.gunModel.scene.rotation.y += Math.sin(this.time.elapsed * 0.0018) * 0.0003
+        this.bagModel.scene.rotation.y += Math.sin(this.time.elapsed * 0.0022) * 0.0003
     }
 }

@@ -171,30 +171,11 @@ export default class Scroll{
             opacity : 0,
             duration : 0.6
         }, ">-0.6")
-        .from(".question:nth-child(1)",{
+        .from(".question",{
             x :200,
+            stagger : 0.2,
             opacity : 0,
             duration : 0.4,
         }, ">-0.6")
-        .from(".question:nth-child(2)",{
-            x :200,
-            opacity : 0,
-            duration : 0.4,
-        }, ">-0.2")
-        .from(".question:nth-child(3)",{
-            x :200,
-            opacity : 0,
-            duration : 0.4,
-        }, ">-0.2")
-        .from(".question:nth-child(4)",{
-            x :200,
-            opacity : 0,
-            duration : 0.4,
-        }, ">-0.2")
-        .from(".question:nth-child(5)",{
-            x :200,
-            opacity : 0,
-            duration : 0.4,
-        }, ">-0.2")
     }
 }

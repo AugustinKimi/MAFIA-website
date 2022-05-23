@@ -28,7 +28,7 @@ export default class RedBackground{
     }
 
     setBackground(){
-        this.backgroundGeometry = new THREE.PlaneBufferGeometry(this.sizes.width/150, this.sizes.height/150)
+        this.backgroundGeometry = new THREE.PlaneBufferGeometry(13, 7.5)
         this.testMaterial = new THREE.MeshBasicMaterial({
             color : "#000000",
             // side : THREE.BackSide   

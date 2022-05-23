@@ -122,11 +122,18 @@
 }
 
 @media only screen and   (max-width : 1200px) {
+    .navbar{
+        padding: 0 2rem;
+    }
     .links-container{
         display: none;
     }
     .menu-button{
         display: block;
+    }
+
+    .social-container{
+        margin: 0;
     }
 
 }
