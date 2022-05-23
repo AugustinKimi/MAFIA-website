@@ -18,8 +18,9 @@ export default class Scroll{
     homePage(){
         const scrollTrigger = {
             trigger : '#about',
-            start : "top bottom ",
+            start : "top top ",
             toggleActions : "restart none none reverse",
+            markers : true,
         }
 
         // ScrollTrigger.create({
@@ -90,7 +91,7 @@ export default class Scroll{
             scrollTrigger : {
                 trigger : '#about',
                 start : "top-100px center ",
-                toggleActions : "restart none none reverse",
+                toggleActions : "restart none none reset",
             }
         })
         tl
@@ -111,7 +112,7 @@ export default class Scroll{
             scrollTrigger : {
                 trigger : '#roadmap',
                 start : "top center ",
-                toggleActions : "restart none none reverse",
+                toggleActions : "restart none none reset",
             }
         })
         tl
@@ -142,7 +143,7 @@ export default class Scroll{
             scrollTrigger : {
                 trigger : '#team',
                 start : "top center ",
-                toggleActions : "restart none none reverse",
+                toggleActions : "restart none none reset",
             },
             x : -200,
             opacity : 0,
@@ -155,7 +156,7 @@ export default class Scroll{
             scrollTrigger : {
                 trigger : '#faq',
                 start : "top center ",
-                toggleActions : "restart none none reverse",
+                toggleActions : "restart none none reset",
             }
         })
 

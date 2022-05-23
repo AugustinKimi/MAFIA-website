@@ -25,7 +25,7 @@
 {
     margin: 0;
     padding: 0;
-    font-family: "BankPrinter",Arial, Helvetica, sans-serif;
+    font-family: monospace,Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     font-weight: 300;
     color: white;
@@ -88,15 +88,22 @@ body{
     color: #D7340D;
 }
 
-.cursor{
+
+.social-links-hover>*{
     position: fixed;
-    z-index: 100000;
     top: 50%;
-    left: 50;
-    width: 30px;
-    transform: translate(-50%,-50%);
+    left: 50%;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    transition:  opacity .3s;
+    opacity: 0;
     pointer-events: none;
 }
+
+.social-links-hover path{
+    fill: white;
+}
+
 .navbar{
     position: fixed;
     padding: 0  4rem;
@@ -108,8 +115,6 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(10px);
     
 }
 
@@ -166,6 +171,7 @@ body{
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
+    pointer-events: none;
 }
 
 .team-title{

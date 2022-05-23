@@ -29,6 +29,7 @@ export default class Resources extends EventEmitter
             () =>
             {
                 this.loaderScreen.style.opacity = "0"
+                this.loaderScreen.style.pointerEvents = "none"
             },
         
             // Progress
