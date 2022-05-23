@@ -23,7 +23,9 @@ export default class Resources extends EventEmitter
 
     trackLoading(){
         this.loaderScreen =  document.querySelector(".loader-screen")
-        this.loaderProgress =  document.querySelector(".loading-progress")
+        this.loaderProgress =  document.querySelector(".loading-number")
+        this.loaderBorder =  document.querySelector(".loading-border")
+
         this.loadingManager = new THREE.LoadingManager(
             // Loaded
             () =>
@@ -35,6 +37,7 @@ export default class Resources extends EventEmitter
             // Progress
             (itemUrl, itemsLoaded, itemsTotal) =>
             {
+                this.loaderBorder.style.width = `calc(${Math.round(itemsLoaded/itemsTotal * 100)}% + 8px)`
                 this.loaderProgress.innerHTML = `${Math.round(itemsLoaded/itemsTotal * 100)}%`
                 console.log(itemUrl, itemsLoaded, itemsTotal, itemsLoaded/itemsTotal * 100)
             },

@@ -29,14 +29,14 @@
     max-width: 600px;
 }
 
-.title{
+.about-title{
     font-size: 40px;
     line-height: 46px;
     font-family: 'Akira';
     margin-bottom: 20px;
 }
 
-.title span{
+.about-title span{
     font-family: 'Akira';
     color: #d7350d;
 }

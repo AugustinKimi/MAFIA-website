@@ -20,7 +20,7 @@ export default class Scroll{
             trigger : '#about-section',
             start : "top top ",
             toggleActions : "restart none none reverse",
-            markers : true,
+            // markers : true,
         }
 
         // ScrollTrigger.create({
@@ -169,7 +169,7 @@ export default class Scroll{
         .from(".faq-img", {
             clipPath : 'polygon(0 50%, 100% 50%, 100% 50%, 0 50%)',
             opacity : 0,
-            duration : 1
+            duration : 0.6
         }, ">-0.6")
         .from(".question:nth-child(1)",{
             x :200,

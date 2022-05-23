@@ -40,7 +40,6 @@ export default class RedBackground{
                 uTime : {value : this.time},
                 uDarkColor : {value : new THREE.Color("#110000")},
                 uAccentColor : {value : new THREE.Color("#FF0000")},
-                // uProgre : {value : new THREE.Color("#FF0000")},
                 uProgress : {value : 1}
             },
             // side : THREE.BackSide

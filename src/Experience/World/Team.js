@@ -54,43 +54,12 @@ export default class Team {
 
                 })
 
-                this.photoMaterial.map = this.resources.items[`teamTexture${this.index[1]}`],
-                this.photoMaterial.reflectivity = 1,
-                this.photoMaterial.transmission = 0.0,
-                this.photoMaterial.roughness = 0.3,
-                this.photoMaterial.metalness = 0.2,
-                this.photoMaterial.clearcoat = 1,
-                this.photoMaterial.clearcoatRoughness = 0,
-                this.photoMaterial.color = new THREE.Color(0xffffff),
-                this.photoMaterial.ior = 2,
-                this.photoMaterial.thickness = 10.0,
-
 
                 child.material = this.photoMaterial
                 this.cardArray.push(child)
-                if(this.debug.active){
-                    this.debugFolder.add(child.material, "reflectivity").min(-1).max(5).step(0.001)
-                    this.debugFolder.add(child.material, "transmission").min(-1).max(5).step(0.001)
-                    this.debugFolder.add(child.material, "roughness").min(-1).max(5).step(0.001)
-                    this.debugFolder.add(child.material, "metalness").min(-1).max(5).step(0.001)
-                    this.debugFolder.add(child.material, "clearcoat").min(-1).max(5).step(0.001)
-                    this.debugFolder.add(child.material, "clearcoatRoughness").min(-1).max(5).step(0.001)
-                    this.debugFolder.add(child.material, "ior").min(-1).max(5).step(0.001)
-                    this.debugFolder.add(child.material, "thickness").min(-20).max(20).step(0.01)
-                    this.debugFolder.addColor(child.material, "color")
-                }
             }
         })
 
-        
-        if(this.debug.active){
-            this.debugFolder.add(this.teamModel.scene.position, "x").min(-5).max(5).step(0.01).name("Team position x")
-            this.debugFolder.add(this.teamModel.scene.position, "y").min(-5).max(5).step(0.01).name("Team position y")
-            this.debugFolder.add(this.teamModel.scene.position, "z").min(-5).max(5).step(0.01).name("Team position z")
-            this.debugFolder.add(this.teamModel.scene.rotation, "x").min(-5).max(5).step(0.01).name("Team rotation x")
-            this.debugFolder.add(this.teamModel.scene.rotation, "y").min(-5).max(5).step(0.01).name("Team rotation y")
-            this.debugFolder.add(this.teamModel.scene.rotation, "z").min(-5).max(5).step(0.01).name("Team rotation z")
-        }
         this.scene.add(this.teamModel.scene)
     }
 
