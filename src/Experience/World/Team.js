@@ -68,10 +68,10 @@ export default class Team {
         
         this.scrollTriggerObject1 = { 
             trigger : '#team',
-            start : "top 10%",
+            start : "top 30%",
             end : "bottom top",
             toggleActions : "reverse none reverse none",
-            // markers : true,
+            markers : true,
             scrub : 1,
         }
         gsap.to(this.teamModel.scene.position,
@@ -81,7 +81,7 @@ export default class Team {
         })
         this.scrollTriggerObject2 = { 
             trigger : '#team',
-            start : "top 10%",
+            start : "top center",
             // end : "top bottom",
             toggleActions : "restart none none reverse",
             // markers : true,

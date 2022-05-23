@@ -84,8 +84,7 @@
     position: relative;
     cursor: pointer;
     width: 26px;
-    height: 20px;
-    margin-bottom: 10px;
+    height: 26px;
     background: none;
     display: flex;
     justify-content: center;
@@ -99,13 +98,14 @@
     top: 50%;
     left: 0;
     width: 100%;
+    transform: translateY(-50%);
     height: 4px;
     border-radius: 10px;
     background-color: #D7340D;
 }
 
 .arrow-container span:nth-child(1){
-    transform: rotate(90deg) ;
+    transform: translateY(-50%) rotate(90deg) ;
     transition: .3s ease;
 }
 

@@ -55,6 +55,7 @@ export default class DomManip{
                     stagger: 0.1,
                     duration : 0.3
                 }, ">-0.8")
+                this.mobileMenu.style.pointerEvents = "all"
             }
             else{
                 const tl = gsap.timeline()
@@ -68,6 +69,7 @@ export default class DomManip{
                     opacity : 0,
                     duration : 0.5
                 })
+                this.mobileMenu.style.pointerEvents = "none"
             }
             this.menuButton.classList.toggle("isOpen")
             menuIsOpen = !menuIsOpen
