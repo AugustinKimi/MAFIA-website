@@ -1,3 +1,5 @@
+import gsap from "gsap"
+
 
 export default class DomManip{
     constructor(){
@@ -6,6 +8,7 @@ export default class DomManip{
 
         this.faqSection()
         this.teamHover()
+        this.toggleMobileMenu()
         window.requestAnimationFrame(() => this.update())
 
     }
@@ -28,6 +31,47 @@ export default class DomManip{
         window.addEventListener("mousemove", (e) => {
             this.cursorX = e.clientX
             this.cursorY = e.clientY
+        })
+    }
+
+    toggleMobileMenu(){
+        let menuIsOpen = false
+        this.menuButton = document.querySelector('.menu-button')
+        this.mobileMenu = document.querySelector('.mobile-links-container')
+
+        this.menuButton.addEventListener('click', () => {
+            console.log(menuIsOpen)
+            if(!menuIsOpen){
+                const tl = gsap.timeline()
+                tl.fromTo(".mobile-links-container",{ opacity : 0},
+                {
+                    opacity : 1,
+                    duration : 0.5
+                })
+                .fromTo(".link", { x : -200, opacity : 0},
+                {
+                    x : 0,
+                    opacity :1,
+                    stagger: 0.1,
+                    duration : 0.3
+                }, ">-0.8")
+            }
+            else{
+                const tl = gsap.timeline()
+                tl.fromTo(".link", { x : 0 , opacity : 1},{
+                    x : -200,
+                    opacity :0,
+                    stagger: 0.1,
+                    duration : 0.3
+                }, ">-0.5")
+                .fromTo(".mobile-links-container",{ opacity : 1},{
+                    opacity : 0,
+                    duration : 0.5
+                })
+            }
+            this.menuButton.classList.toggle("isOpen")
+            menuIsOpen = !menuIsOpen
+            console.log(menuIsOpen)
         })
     }
 

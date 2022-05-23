@@ -45,3 +45,10 @@
 
     line-height: 200%;
 }
+
+@media only screen and   (max-width : 600px) {
+    .content-container{
+        width: 100%;
+        max-width: 600px;
+    }
+}

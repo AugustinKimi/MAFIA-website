@@ -20,10 +20,12 @@
     align-items: flex-start;
     width: 100%;
     gap: 60px;
+    flex-wrap: wrap;
 }
 
 .faq-img-container{
     flex: 1;
+    min-width: 300px;
 }
 
 .faq-img{
@@ -37,6 +39,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    min-width: 300px;
 }
 
 
@@ -113,9 +116,16 @@
 
 
 .answer{
-    /* position: absolute;
-    top: 105%;
-    left: 0;
-    width: 100%; */
     padding: 10px 20px;
+}
+
+
+
+@media only screen and   (max-width : 900px) {
+    .question-title{
+
+        font-family: "Akira";
+        font-size: 16px;
+    }
+    
 }

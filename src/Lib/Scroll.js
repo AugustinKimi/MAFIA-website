@@ -91,7 +91,7 @@ export default class Scroll{
             scrollTrigger : {
                 trigger : '#about-section',
                 start : "top-100px center ",
-                toggleActions : "restart none none reset",
+                toggleActions : "restart none none reverse",
             }
         })
         tl
@@ -112,7 +112,7 @@ export default class Scroll{
             scrollTrigger : {
                 trigger : '#roadmap',
                 start : "top center ",
-                toggleActions : "restart none none reset",
+                toggleActions : "restart none none reverse",
             }
         })
         tl
@@ -143,7 +143,7 @@ export default class Scroll{
             scrollTrigger : {
                 trigger : '#team',
                 start : "top center ",
-                toggleActions : "restart none none reset",
+                toggleActions : "restart none none reverse",
             },
             x : -200,
             opacity : 0,
@@ -156,7 +156,7 @@ export default class Scroll{
             scrollTrigger : {
                 trigger : '#faq',
                 start : "top center ",
-                toggleActions : "restart none none reset",
+                toggleActions : "restart none none reverse",
             }
         })
 

@@ -8,7 +8,7 @@
 
 .discord-container{
     border: 4px solid #D7340D;
-    width: clamp(200px, 40%, 600px);
+    width: clamp(200px, 80%, 600px);
     height: clamp(60px, 10vh, 120px);
     font-size: 40px;
     font-family: 'Akira';
@@ -17,4 +17,13 @@
     align-items: center;
     line-height: 100%;
     color: #D7340D;
+}
+
+
+@media only screen and   (max-width : 900px) {
+    
+.discord-container{
+    font-size: 20px;
+}
+    
 }

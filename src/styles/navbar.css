@@ -1,0 +1,132 @@
+.navbar{
+    position: fixed;
+    padding: 0  4rem;
+    z-index: 1000;
+    width: 100vw;
+    height: 80px;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.navbar svg path{
+    fill: white;
+}
+
+.navbar .logo{
+    height: 30px;
+    object-fit: contain;
+    margin-right: 2rem;
+}
+
+.links-container{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;    
+    margin: 0 5vw;
+}
+
+.link{
+    margin: 0 2rem;
+    font-family: 'Akira';
+    text-transform: uppercase;
+}
+
+.social-container{
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+}
+
+.social-link{
+    margin: 0 0.5rem;
+}
+
+.menu-button{
+    display: none;
+    width: 20px;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 20px;
+    margin-left: 0.5rem;
+    transition: width .3s ease;
+}
+
+.menu-button.isOpen{
+    width: 26px;
+}
+
+.menu-button>span{
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 10px;
+    position: absolute;
+    transition: .3s ease;
+}
+
+.menu-button>span:nth-child(1){
+    top: 0;
+    left: 0;
+}
+
+.menu-button>span:nth-child(2){
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 5px;
+}
+
+.menu-button>span:nth-child(3){
+    bottom: 0;
+    left: 0;
+}
+
+
+.menu-button.isOpen>span:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+    height: 4px;
+}
+
+.menu-button.isOpen>span:nth-child(2){
+    opacity: 0;
+}
+
+.menu-button.isOpen>span:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+    height: 4px;
+}
+
+.mobile-links-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: rgba(0, 0, 0, 1.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5vh 0;
+    opacity: 0;
+}
+
+.mobile-links-container .link{
+    font-size: 30px;
+}
+
+@media only screen and   (max-width : 1200px) {
+    .links-container{
+        display: none;
+    }
+    .menu-button{
+        display: block;
+    }
+
+}
