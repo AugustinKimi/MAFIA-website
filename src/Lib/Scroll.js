@@ -17,19 +17,19 @@ export default class Scroll{
 
     homePage(){
         const scrollTrigger = {
-            trigger : '#about',
+            trigger : '#about-section',
             start : "top top ",
             toggleActions : "restart none none reverse",
             markers : true,
         }
 
         // ScrollTrigger.create({
-        //     trigger: '#about',
+        //     trigger: '#about-section',
         //     start : "top top",
         //     onLeaveBack: () => window.scroll(0, 0)
         //   });
         // ScrollTrigger.create({
-        //     trigger: '#about',
+        //     trigger: '#about-section',
         //     start : "top bottom ",
         //     // onEnter : () => window.scroll(0, window.innerHeight + 20),
         // });
@@ -89,7 +89,7 @@ export default class Scroll{
     {
         const tl = gsap.timeline({
             scrollTrigger : {
-                trigger : '#about',
+                trigger : '#about-section',
                 start : "top-100px center ",
                 toggleActions : "restart none none reset",
             }

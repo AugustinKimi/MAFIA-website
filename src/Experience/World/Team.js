@@ -99,7 +99,7 @@ export default class Team {
         
         this.scrollTriggerObject1 = { 
             trigger : '#team',
-            start : "top center",
+            start : "top 10%",
             end : "bottom top",
             toggleActions : "reverse none reverse none",
             // markers : true,
@@ -112,7 +112,7 @@ export default class Team {
         })
         this.scrollTriggerObject2 = { 
             trigger : '#team',
-            start : "top center",
+            start : "top 10%",
             // end : "top bottom",
             toggleActions : "restart none none reverse",
             // markers : true,
@@ -170,7 +170,7 @@ export default class Team {
                     duration :0.2
                 })
                 .to(this.intersects[0].object.parent.rotation,{
-                    x : rotationX,
+                    x : 0,
                     duration :0.3
                 })
                 this.currentIndex = this.intersects[0].object.name.split("team-photo")[1]
