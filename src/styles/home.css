@@ -69,13 +69,14 @@
 }
 
 .big-title .outline{
+
+    letter-spacing: 1.72rem;
     font-family: 'Akira';
     color: #ffffff00;
     -webkit-text-stroke: 1px #d7350d;
 }
 .big-title .outline:first-child{
     font-family: 'Akira';
-    margin-right: 10vw;
 }
 
 .petals-loop{
@@ -93,7 +94,7 @@
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 0);
-    height: clamp(200px, 100%, 90vh);
+    height: clamp(200px, 100%, 87vh);
     max-width: 95vw;
     object-position: bottom;
     object-fit: contain;
@@ -153,5 +154,6 @@
         justify-content: flex-start;
         margin-top: 130px;
     }
+
         
 }
