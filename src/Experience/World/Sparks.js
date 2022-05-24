@@ -57,7 +57,7 @@ export default class Sparks{
             uniforms : {
                 uTime : {value : 0},
                 uColor : { value : new THREE.Color("#ff0000")},
-                uInsideColor : { value : new THREE.Color("#ff1900")},
+                uInsideColor : { value : new THREE.Color("#ff3300")},
                 uOutsideColor : {value : new THREE.Color("#FF2600")}
             },
             fragmentShader,

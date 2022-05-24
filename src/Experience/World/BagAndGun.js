@@ -31,7 +31,7 @@ export default class BagAndGun {
         this.bagModel.scene.position.set(0.33, -0.09, 1.8)
         this.bagModel.scene.rotation.set(0.45, -0.53, 0.08)
         
-        if(this.debug.active && false){
+        if(this.debug.active ){
             this.debugFolder.add(this.bagModel.scene.position, "x").min(-5).max(5).step(0.01).name("Bag position x")
             this.debugFolder.add(this.bagModel.scene.position, "y").min(-5).max(5).step(0.01).name("Bag position y")
             this.debugFolder.add(this.bagModel.scene.position, "z").min(-5).max(5).step(0.01).name("Bag position z")
@@ -49,7 +49,7 @@ export default class BagAndGun {
 
         this.gunModel.scene.position.set(1.19, 0.08, 1.19)
         this.gunModel.scene.rotation.set(2.79, 0.94, 4.02)
-        if(this.debug.active && false){
+        if(this.debug.active){
             this.debugFolder.add(this.gunModel.scene.position, "x").min(-5).max(5).step(0.01).name("Gun position x")
             this.debugFolder.add(this.gunModel.scene.position, "y").min(-5).max(5).step(0.01).name("Gun position y")
             this.debugFolder.add(this.gunModel.scene.position, "z").min(-5).max(5).step(0.01).name("Gun position z")
@@ -62,46 +62,63 @@ export default class BagAndGun {
 
     setScrollTrigger(){
         gsap.registerPlugin(ScrollTrigger)
-        
-        this.scrollTriggerObject1 = { 
-            trigger : '#about',
-            start : "top top",
-            end : "bottom top",
+        const gunTl = gsap.timeline({scrollTrigger : { 
+            trigger : '#about-section',
+            start : "center center",
+            endTrigger : "#roadmap",
+            end : "130% top",
             toggleActions : "reverse none reverse none",
-            // markers : true,
+            markers : true,
             scrub : 1,
-        }
-        gsap.to(this.gunModel.scene.position,
+        }} )
+
+        gunTl
+        .to(this.gunModel.scene.position,{
+            x :  0.5,
+            y : 0.08,
+            z : 0.5,
+            duration : 70,
+        } )
+        .to(this.gunModel.scene.rotation,{
+            y : 0.45,
+            x : 2.05,
+            z : 4.63,
+            duration : 70
+        }, ">-70")
+        .to(this.gunModel.scene.position,
             {
-                scrollTrigger : this.scrollTriggerObject1, 
-                x :  0.5,
-                y : 0.08,
-                z : 0.5,
-            })
-        gsap.to(this.bagModel.scene.position, 
-            {
-                scrollTrigger : this.scrollTriggerObject1 ,
-                x :  -0.38,
-                y : -0.09,
-                z : 1.8
+                y : 2,
+                duration : 30,
             })
 
-        this.scrollTriggerObject2 = { 
-            trigger : '#roadmap',
-            start : "center top",
-            end : "+=200%  top",
-            // markers : true,
+        const bagTl = gsap.timeline({scrollTrigger : { 
+            trigger : '#about-section',
+            start : "center center",
+            endTrigger : "#roadmap",
+            end : "130% top",
+            toggleActions : "reverse none reverse none",
+            markers : true,
             scrub : 1,
-        }
-        gsap.to(this.gunModel.scene.position,
+        }} )
+
+        bagTl
+        .to(this.bagModel.scene.position, 
             {
-                scrollTrigger : this.scrollTriggerObject2 ,
-                y : 2,
+                x :  -0.38,
+                y : -0.09,
+                z : 1.8,
+                duration : 70,
             })
-        gsap.to(this.bagModel.scene.position, 
+        .to(this.bagModel.scene.rotation,{
+            y : 2.54,
+            x : 0.7,
+            z : 0.33,
+            duration : 70
+        }, ">-70")
+        .to(this.bagModel.scene.position, 
             {
-                scrollTrigger : this.scrollTriggerObject2 ,
                 y : 2,
+                duration : 30,
             })
     }
     update(){

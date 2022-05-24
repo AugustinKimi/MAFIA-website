@@ -6,6 +6,9 @@
     align-items: flex-start;
     margin-bottom: 0;
     overflow: hidden;
+
+    padding-top: 10vh;
+    padding-bottom: 10vh;
     /* transform: skew(10deg); */
 }
 
@@ -81,6 +84,7 @@
 
 
 .arrow-container{
+    margin-left: 20px;
     position: relative;
     cursor: pointer;
     width: 26px;
@@ -123,10 +127,14 @@
 
 
 @media only screen and   (max-width : 900px) {
+
+    .faq-title{
+        margin-bottom: 40px;
+    }
     .question-title{
 
         font-family: "Akira";
-        font-size: 16px;
+        font-size: 14px;
     }
     
 }

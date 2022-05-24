@@ -22,12 +22,14 @@ export default class Scroll{
             toggleActions : "restart none none reverse",
             // markers : true,
         }
+        this.homePageSection = document.querySelector("#home-section")
 
-        // ScrollTrigger.create({
-        //     trigger: '#about-section',
-        //     start : "top top",
-        //     onLeaveBack: () => window.scroll(0, 0)
-        //   });
+        ScrollTrigger.create({
+            trigger: '#about-section',
+            start : "top top",
+            onEnter : () => this.homePageSection.style.pointerEvents = "none",
+            onLeaveBack: () => this.homePageSection.style.pointerEvents = "all",
+          });
         // ScrollTrigger.create({
         //     trigger: '#about-section',
         //     start : "top bottom ",
@@ -155,7 +157,7 @@ export default class Scroll{
         const tl = gsap.timeline({
             scrollTrigger : {
                 trigger : '#faq',
-                start : "top center ",
+                start : "top 80% ",
                 toggleActions : "restart none none reverse",
             }
         })

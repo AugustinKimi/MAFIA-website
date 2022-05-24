@@ -71,7 +71,7 @@ export default class Team {
             start : "top 30%",
             end : "bottom top",
             toggleActions : "reverse none reverse none",
-            markers : true,
+            // markers : true,
             scrub : 1,
         }
         gsap.to(this.teamModel.scene.position,
@@ -114,8 +114,8 @@ export default class Team {
                 this.teamIndex = this.currentIntersect.object.name.split("team-photo")[1]
                 if(this.teamIndex == 1) window.open("https://www.linkedin.com/in/fran%C3%A7ois-castan-a1bb88235/", '_blank');
                 if(this.teamIndex == 2) window.open("https://www.linkedin.com/in/george-miller-95393b236", '_blank');
-                if(this.teamIndex == 3) window.open("https://twitter.com/Voster_", '_blank');
-                if(this.teamIndex == 4) window.open("https://twitter.com/05Yugi", '_blank');
+                if(this.teamIndex == 3) window.open("https://twitter.com/O5Yugi", '_blank');
+                if(this.teamIndex == 4) window.open("https://twitter.com/Voster_", '_blank');
                 // if(this.teamIndex == 5) window.open("https://youtube.com#5", '_blank');
             }
         })
