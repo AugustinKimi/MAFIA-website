@@ -68,7 +68,6 @@ export default class BagAndGun {
             endTrigger : "#roadmap",
             end : "130% top",
             toggleActions : "reverse none reverse none",
-            markers : true,
             scrub : 1,
         }} )
 
@@ -97,7 +96,6 @@ export default class BagAndGun {
             endTrigger : "#roadmap",
             end : "130% top",
             toggleActions : "reverse none reverse none",
-            markers : true,
             scrub : 1,
         }} )
 

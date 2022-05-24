@@ -1,14 +1,13 @@
 #faq{
     background: #090909;
-    min-height: 100vh;
+    min-height: initial;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 0;
     overflow: hidden;
-
     padding-top: 10vh;
-    padding-bottom: 10vh;
+    /* padding-bottom: 10vh; */
     /* transform: skew(10deg); */
 }
 
@@ -39,7 +38,7 @@
 }
 
 .question-container{
-    flex: 2;
+    flex: 3;
     display: flex;
     flex-direction: column;
     gap: 20px;

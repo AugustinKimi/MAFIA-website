@@ -5,10 +5,8 @@
     margin: 0;
     top: 0;
     left: 0;
-
+    max-height: 100vh;
 }
-
-
 
 #home{
     position: absolute;
@@ -92,14 +90,15 @@
 .avatar{
     position: absolute;
     z-index: 100;
-    bottom : 0;
+    bottom: 0;
     left: 50%;
     transform: translate(-50%, 0);
-    height: clamp(200px, 100%, 95vh);
+    height: clamp(200px, 100%, 90vh);
     max-width: 95vw;
     object-position: bottom;
     object-fit: contain;
 }
+
 
 .scroll-button-container{
     position: absolute;
