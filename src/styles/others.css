@@ -154,6 +154,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     pointer-events: none;
+    overflow: initial;
 }
 
 .team-title{
