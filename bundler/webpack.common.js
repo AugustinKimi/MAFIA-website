@@ -32,35 +32,10 @@ module.exports = {
             // HTML
             {
                 test: /\.(html)$/,
-                use: [
-                    {
-                      loader: 'html-loader',
-                      options: {
-                        attributes: {
-                          list: [
-                            '...',
-                            {
-                              tag: 'meta',
-                              attribute: 'content',
-                              type: 'src',
-                              /**
-                               * @docs https://github.com/webpack-contrib/html-loader#list
-                               */
-                              filter: (_tag, _attribute, attributes, _resourcePath) => {
-                                if (
-                                  attributes.property === 'og:image' ||
-                                  attributes.property === 'twitter:image'
-                                ) {
-                                  return true
-                                }
-                                return false
-                              },
-                            },
-                          ],
-                        },
-                      },
-                    },
-                  ],
+                use:
+                [
+                    'html-loader'
+                ]
             },
 
             // JS
