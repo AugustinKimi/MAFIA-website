@@ -10,7 +10,7 @@
 
 .loader-screen{
     position: fixed;
-    z-index: 10000;
+    z-index: 100000;
     top: 0;
     letter-spacing: 0;
     width: 100vw;
@@ -78,7 +78,7 @@
 
 .scroll-progress{
     position: fixed;
-    z-index: 100000;
+    z-index: 1000;
     top: 50%;
     left: 50px;
     transform: translateY(-50%);
