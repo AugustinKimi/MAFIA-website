@@ -119,7 +119,7 @@ export default class DomManip{
             console.log(this.topTriggerSection)
 
             if(i != 0){
-                gsap.to(point, {
+                gsap.fromTo(point,{"--point-color" : "white"}, {
                     scrollTrigger : {
                         trigger : this.sections[i],
                         start : `${this.topTriggerSection} ${i < this.sections.length - 1 ? "center" : "bottom"}`,
