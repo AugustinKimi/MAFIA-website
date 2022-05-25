@@ -10,6 +10,7 @@ export default class Scroll{
         
         this.homePage()
         this.aboutPage()
+        this.playToEarnTitle()
         this.roadmapPage()
         this.teamPage()
         this.faqPage()
@@ -86,6 +87,27 @@ export default class Scroll{
         })
     }
 
+    playToEarnTitle()
+    {
+        const tl = gsap.timeline({
+            scrollTrigger : {
+                trigger : '#play-to-earn',
+                start : "top-100px center ",
+                toggleActions : "restart none none reverse",
+            }
+        })
+        tl
+        .from(".play-to-earn-title", {
+            x : -200,
+            opacity : 0,
+            duration : 0.6
+        })
+        .from("#play-to-earn .content",{
+            x :200,
+            opacity : 0,
+            duration : 0.6,
+        }, ">-0.4")
+    }
 
     aboutPage()
     {
@@ -97,12 +119,12 @@ export default class Scroll{
             }
         })
         tl
-        .from(".title", {
+        .from(".about-title", {
             x : -200,
             opacity : 0,
             duration : 0.6
         })
-        .from(".content",{
+        .from("#about-section .content",{
             x :200,
             opacity : 0,
             duration : 0.6,

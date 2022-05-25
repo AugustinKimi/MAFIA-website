@@ -1,4 +1,5 @@
 import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
 export default class DomManip{
@@ -9,6 +10,7 @@ export default class DomManip{
         this.faqSection()
         this.teamHover()
         this.toggleMobileMenu()
+        this.scrollProgress()
         window.requestAnimationFrame(() => this.update())
 
     }
@@ -39,7 +41,7 @@ export default class DomManip{
         this.menuButton = document.querySelector('.menu-button')
         this.mobileMenu = document.querySelector('.mobile-links-container')
         this.menuLinks = Array.from(document.querySelectorAll('.mobile-links-container .link'))
-        console.log(this.menuLinks)
+
         const closeMenu = () =>{
             const tl = gsap.timeline()
             tl.fromTo(".link", { x : 0 , opacity : 1},{
@@ -90,6 +92,78 @@ export default class DomManip{
                 closeMenu()
             })
         }
+
+    }
+
+    scrollProgress(){
+        gsap.registerPlugin(ScrollTrigger)
+        this.scrollProgressContainer = document.querySelector(".scroll-progress")
+        this.sections = Array.from(document.querySelectorAll(".section"))
+        this.scrollPoints = []
+        this.pointLinkProgress = []
+
+        for (let i = 0; i < this.sections.length; i++) {
+            const element = this.sections[i]
+            const point = document.createElement("a")
+            point.setAttribute("href", `#${element.dataset.sectionName}`)
+            point.classList.add("scroll-progress-point")
+            this.scrollProgressContainer.appendChild(point)
+            this.scrollPoints.push(point)
+
+            this.topTriggerSection = "top"
+
+            if(i == 1) this.topTriggerSection = `+=${window.innerHeight/2 + 1}`
+            else if(i < this.sections.length - 1) this.topTriggerSection = "top"
+            else this.topTriggerSection = "bottom"
+
+            console.log(this.topTriggerSection)
+
+            if(i != 0){
+                gsap.to(point, {
+                    scrollTrigger : {
+                        trigger : this.sections[i],
+                        start : `${this.topTriggerSection} ${i < this.sections.length - 1 ? "center" : "bottom"}`,
+                        toggleActions : "restart none none reverse",
+                        duration : 0.3,
+                        markers : i == 1 ? true : false
+                    },
+                    "--point-color" : "#D7340D"
+                })
+            }
+        
+            if(i < this.sections.length - 1){
+                const pointLink = document.createElement("span")
+                pointLink.classList.add("scroll-progress-link")
+                this.scrollProgressContainer.appendChild(pointLink)
+
+                const linkProgress = document.createElement("span")
+                linkProgress.classList.add("point-link-progress")
+                pointLink.appendChild(linkProgress)
+                this.pointLinkProgress.push(linkProgress)
+                if(i != 0){
+                    gsap.to(linkProgress, {
+                        scrollTrigger : {
+                            trigger : this.sections[i],
+                            start : `top ${i == 1 ? "top" : "center"}`,
+                            end : "bottom center",
+                            scrub : 1
+                        },
+                        height : "100%"
+                    })
+                }
+                
+            }
+        }
+        ScrollTrigger.create({
+            trigger: '#about-section',
+            start : "top top",
+            onEnter : () => {
+                gsap.fromTo(".scroll-progress-link:nth-child(2) .point-link-progress",{ height : "0%"}, {height : "100%", duration : 0.3})
+            },
+            onLeaveBack: () => {
+                gsap.fromTo(".scroll-progress-link:nth-child(2) .point-link-progress",{ height : "100%"}, {height : "0%", duration : 0.3})
+            },
+          });
 
     }
 

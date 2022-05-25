@@ -77,7 +77,7 @@ export default class Team {
         gsap.to(this.teamModel.scene.position,
         {
             scrollTrigger : this.scrollTriggerObject1, 
-            x :  5,
+            x :  6,
         })
         this.scrollTriggerObject2 = { 
             trigger : '#team',
@@ -116,6 +116,7 @@ export default class Team {
                 if(this.teamIndex == 2) window.open("https://www.linkedin.com/in/george-miller-95393b236", '_blank');
                 if(this.teamIndex == 3) window.open("https://twitter.com/05Yugi", '_blank');
                 if(this.teamIndex == 4) window.open("https://twitter.com/Voster_", '_blank');
+                if(this.teamIndex == 6) window.open("https://twitter.com/strawhat595", '_blank');
                 // if(this.teamIndex == 5) window.open("https://youtube.com#5", '_blank');
             }
         })
@@ -147,7 +148,7 @@ export default class Team {
                     this.linkedinLogo.style.opacity = 1
                 }
 
-                if(this.currentIndex == 3 || this.currentIndex == 4){
+                if(this.currentIndex == 3 || this.currentIndex == 4 || this.currentIndex == 6){
                     this.twitterLogo.style.opacity = 1
                 }
             }

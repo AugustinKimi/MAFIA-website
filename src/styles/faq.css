@@ -8,6 +8,7 @@
     overflow: hidden;
     padding-top: 10vh;
     /* padding-bottom: 10vh; */
+    min-height: 100vh;
     /* transform: skew(10deg); */
 }
 

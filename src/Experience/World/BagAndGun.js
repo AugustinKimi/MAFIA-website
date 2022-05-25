@@ -28,7 +28,7 @@ export default class BagAndGun {
         this.bagModel.scene.scale.set(0.2, 0.2, 0.2)
 
 
-        this.bagModel.scene.position.set(0.33, -0.09, 1.8)
+        this.bagModel.scene.position.set(2.53, -0.09, 1.8)
         this.bagModel.scene.rotation.set(0.45, -0.53, 0.08)
         
         if(this.debug.active ){
@@ -47,7 +47,7 @@ export default class BagAndGun {
         this.gunModel.scene.scale.set(0.2, 0.2, 0.2)
 
 
-        this.gunModel.scene.position.set(1.19, 0.08, 1.19)
+        this.gunModel.scene.position.set(2.59, 0.08, 1.19)
         this.gunModel.scene.rotation.set(2.79, 0.94, 4.02)
         if(this.debug.active){
             this.debugFolder.add(this.gunModel.scene.position, "x").min(-5).max(5).step(0.01).name("Gun position x")
@@ -64,7 +64,7 @@ export default class BagAndGun {
         gsap.registerPlugin(ScrollTrigger)
         const gunTl = gsap.timeline({scrollTrigger : { 
             trigger : '#about-section',
-            start : "center center",
+            start : "bottom center",
             endTrigger : "#roadmap",
             end : "130% top",
             toggleActions : "reverse none reverse none",
@@ -92,7 +92,7 @@ export default class BagAndGun {
 
         const bagTl = gsap.timeline({scrollTrigger : { 
             trigger : '#about-section',
-            start : "center center",
+            start : "bottom center",
             endTrigger : "#roadmap",
             end : "130% top",
             toggleActions : "reverse none reverse none",

@@ -14,6 +14,12 @@ export default [
         type: 'gltfModel',
         path: 'models/team-photos/elrond-mafia-photo.glb'
     },
+
+    {
+        name: 'skullModel',
+        type: 'gltfModel',
+        path: 'models/skull/skull.gltf'
+    },
     {
         name: 'teamTexture1',
         type: 'texture',
@@ -38,6 +44,11 @@ export default [
         name: 'teamTexture5',
         type: 'texture',
         path: 'textures/team/team-5.png'
+    },
+    {
+        name: 'teamTexture6',
+        type: 'texture',
+        path: 'textures/team/team-6.webp'
     },
     {
           name: "environmentMapTexture",

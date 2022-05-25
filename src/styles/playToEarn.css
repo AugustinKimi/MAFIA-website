@@ -1,0 +1,55 @@
+#play-to-earn{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    /* margin-top: 20vh; */
+    /* margin-top: 100vh; */
+    /* margin-top: 100vh; */
+    /* margin: 0 ; */
+}
+ 
+
+
+#play-to-earn .test-container{
+    position: sticky;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+#play-to-earn .content-container{
+    width: 50%;
+    max-width: 600px;
+}
+
+#play-to-earn .play-to-earn-title{
+    font-size: 40px;
+    line-height: 46px;
+    font-family: 'Akira';
+    margin-bottom: 20px;
+}
+
+#play-to-earn .play-to-earn-title span{
+    font-family: 'Akira';
+    color: #d7350d;
+}
+
+#play-to-earn .content{
+
+    line-height: 200%;
+}
+
+@media only screen and   (max-width : 600px) {
+    #play-to-earn .content-container{
+        width: 100%;
+        max-width: 600px;
+    }
+    #play-to-earn .test-container{
+        position: sticky;
+        top: 100px;
+        /* transform: translateY(-50%); */
+        transform: none;
+        width: 100%;
+    }
+}

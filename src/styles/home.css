@@ -155,5 +155,9 @@
         margin-top: 130px;
     }
 
+    .title-container .outline{
+        letter-spacing: 0.3rem;
+    }
+
         
 }

@@ -21,21 +21,25 @@
     align-items: center;
     transition: opacity 1s ease;
 }
+.loader-video{
+    height: 75px;
+}
 
 .loading-progress{
     /* border: 4px solid #D7340D; */
     background: #000000;
-    width: clamp(200px, 40%, 600px);
-    height: clamp(60px, 10vh, 120px);
+    width: clamp(200px, 30%, 400px);
+    height: clamp(100px, 12vh, 120px);
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .loading-progress .loading-number{
 
-    font-size: 40px;
+    font-size: 16px;
     font-family: 'Akira';
     display: flex;
     justify-content: center;
@@ -72,6 +76,60 @@
     fill: white;
 }
 
+.scroll-progress{
+    position: fixed;
+    z-index: 100000;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.scroll-progress .scroll-progress-point{
+    --point-color : white;
+    position: relative;
+    width: 12px;
+    height: 12px;
+    border-radius: 20px;
+    background: var(--point-color);
+}
+
+.scroll-progress .scroll-progress-point:first-child{
+    --point-color : #D7340D;
+}
+
+
+.scroll-progress .scroll-progress-point::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    width: 150%;
+    height: 150%;
+    border: 1px solid var(--point-color);
+}
+
+.scroll-progress .scroll-progress-link{
+    width: 2px;
+    height: 60px;
+    background: white;
+    margin: 10px 0;
+}
+
+.point-link-progress{
+    position: relative;
+    background: #D7340D;
+    width: 100%;
+    height: 0%;
+    display: block;
+}
+
+
 
 .section{
     position: relative;
@@ -107,11 +165,21 @@
     margin-bottom: 20px;
 }
 
+
+
+
+
 @media only screen and   (max-width : 600px) {
     .section{
         padding: 0 2vw;
     }
     .social-links-hover>*{
         display: none !important;
+    }
+}
+
+@media only screen and   (max-width : 600px) {
+    .scroll-progress{
+        display: none;
     }
 }

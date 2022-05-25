@@ -49,6 +49,6 @@ void main(){
 	
     float strength = 0.25 / (distance(vec2(vUv.x, (vUv.y -0.6) * 1.0), vec2(0.5, 0.5)) * 0.8) - 0.3;
 
-	gl_FragColor = vec4( f, 0.2, 0.1, 0.5 - strength * 1.2 ); 
+	gl_FragColor = vec4( f, 0.2, 0.1, 0.35 - strength * 1.2 ); 
     // gl_FragColor = vec4(0.0, 1.0,  0.0, 0.2 - strength);
 }
