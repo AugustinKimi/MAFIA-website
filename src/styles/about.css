@@ -9,6 +9,7 @@
     margin-top: 0 ;
     height: 150vh;
     margin-bottom: 100vh;
+    overflow: initial;
 }
 
 #about{
