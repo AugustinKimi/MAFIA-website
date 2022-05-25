@@ -5,6 +5,7 @@ export default class Debug
     constructor()
     {
         this.active = window.location.hash === '#debug'
+        this.active = false
 
         if(this.active)
         {

@@ -125,7 +125,6 @@ export default class DomManip{
                         start : `${this.topTriggerSection} ${i < this.sections.length - 1 ? "center" : "bottom"}`,
                         toggleActions : "restart none none reverse",
                         duration : 0.3,
-                        markers : i == 1 ? true : false
                     },
                     "--point-color" : "#D7340D"
                 })

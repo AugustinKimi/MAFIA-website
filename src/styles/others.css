@@ -145,6 +145,7 @@
     width: 100vw;
     margin: 30vh 0;
     padding: 0 10vw;
+    overflow: hidden;
 }
 
 #team{

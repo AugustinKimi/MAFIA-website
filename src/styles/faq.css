@@ -136,5 +136,9 @@
         font-family: "Akira";
         font-size: 14px;
     }
+
+    #faq{
+        padding-bottom: 10vh;
+    }
     
 }
