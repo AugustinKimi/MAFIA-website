@@ -6,13 +6,7 @@
     src: url('../static/fonts/Akira-Expanded-Demo.otf');
 }
 
-@font-face
-{
-    font-family: 'BankPrinter';
-    font-weight: normal;
-    font-style: normal;
-    src: url('../static/fonts/F25_Bank_Printer.ttf');
-}
+
 @import url('./styles/about.css');
 @import url('./styles/home.css');
 @import url('./styles/roadmap.css');

@@ -15,12 +15,10 @@ export default class DomManip{
 
     }
     faqSection(){
-        console.log('init')
         this.questions = Array.from(document.querySelectorAll(".question"))
         this.questionButtons = Array.from(document.querySelectorAll(".faq-title-container"))
         this.questionButtons.forEach((element, key) => {
             element.addEventListener('click', () => {
-                console.log("click")
                 this.questions[key].classList.toggle("isOpen")
             })
         });
@@ -88,7 +86,6 @@ export default class DomManip{
 
         for(const link of this.menuLinks){
             link.addEventListener('click' , () => {
-                console.log("click")
                 closeMenu()
             })
         }
@@ -114,9 +111,7 @@ export default class DomManip{
 
             if(i == 1) this.topTriggerSection = `+=${window.innerHeight/2 + 1}`
             else if(i < this.sections.length - 1) this.topTriggerSection = "top"
-            else this.topTriggerSection = "bottom"
-
-            console.log(this.topTriggerSection)
+            else this.topTriggerSection = "99%"
 
             if(i != 0){
                 gsap.fromTo(point,{"--point-color" : "white"}, {

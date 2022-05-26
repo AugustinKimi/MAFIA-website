@@ -29,10 +29,7 @@ export default class RedBackground{
 
     setBackground(){
         this.backgroundGeometry = new THREE.PlaneBufferGeometry(13, 7.5)
-        this.testMaterial = new THREE.MeshBasicMaterial({
-            color : "#000000",
-            // side : THREE.BackSide   
-        })
+
         this.backgroundMaterial = new THREE.ShaderMaterial({
             fragmentShader,
             vertexShader,

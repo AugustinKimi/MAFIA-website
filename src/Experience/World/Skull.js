@@ -22,13 +22,13 @@ export default class Skull{
     
     setSkull(){
         this.skullModel = this.resources.items.skullModel
-        console.log(this.skullModel.scene)
+
         this.skullModel.scene.traverse((child) => {
             if(child instanceof THREE.Mesh){
                 // child.material.color = "red"
             }
         })
-        this.skullModel.scene.scale.set(0.7, 0.7, 0.7)
+        this.skullModel.scene.scale.set(0.9, 0.9, 0.9)
 
         
         if(this.debug.active ){

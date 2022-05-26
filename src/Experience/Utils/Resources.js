@@ -39,7 +39,6 @@ export default class Resources extends EventEmitter
             {
                 this.loaderBorder.style.width = `calc(${Math.round(itemsLoaded/itemsTotal * 100)}% + 8px)`
                 this.loaderProgress.innerHTML = `${Math.round(itemsLoaded/itemsTotal * 100)}%`
-                console.log(itemUrl, itemsLoaded, itemsTotal, itemsLoaded/itemsTotal * 100)
             },
         )
     }

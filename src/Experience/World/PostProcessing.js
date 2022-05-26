@@ -33,7 +33,6 @@ export default class PostProcess{
     }
 
     setPostProcess(){
-        console.log(this.renderer)
         this.renderTarget =  new THREE.WebGLRenderTarget(
             800,
             600,

@@ -36,7 +36,6 @@ export default class Team {
         this.cardArray = []
 
         this.teamModel.scene.traverse((child) => {
-            console.log(child.name.includes("team-photo"), child instanceof THREE.Mesh)
             if(child instanceof THREE.Mesh && child.name.includes("team-photo") ){
                 this.index = child.name.split("team-photo")
                 this.resources.items[`teamTexture${this.index[1]}`].flipY = false
@@ -44,8 +43,8 @@ export default class Team {
                     map : this.resources.items[`teamTexture${this.index[1]}`],
                     reflectivity : 1,
                     transmission : 0.0,
-                    roughness : 0.3,
-                    metalness : 0.2,
+                    roughness : 0.2,
+                    metalness : 0,
                     clearcoat : 1,
                     clearcoatRoughness : 0,
                     color : new THREE.Color(0xffffff),
@@ -53,7 +52,17 @@ export default class Team {
                     thickness : 10.0,
 
                 })
-
+                if(this.debug.active){
+                    this.debugFolder.add(this.photoMaterial, "reflectivity").min(0).max(1).step(0.01)
+                    this.debugFolder.add(this.photoMaterial, "transmission").min(0).max(1).step(0.01)
+                    this.debugFolder.add(this.photoMaterial, "roughness").min(0).max(1).step(0.01)
+                    this.debugFolder.add(this.photoMaterial, "metalness").min(0).max(1).step(0.01)
+                    this.debugFolder.add(this.photoMaterial, "clearcoat").min(0).max(1).step(0.01)
+                    this.debugFolder.add(this.photoMaterial, "clearcoatRoughness").min(0).max(1).step(0.01)
+                    this.debugFolder.addColor(this.photoMaterial, "color")
+                    this.debugFolder.add(this.photoMaterial, "ior").min(0).max(5).step(0.01)
+                    this.debugFolder.add(this.photoMaterial, "thickness").min(0).max(50).step(0.01)
+                }
 
                 child.material = this.photoMaterial
                 this.cardArray.push(child)
@@ -109,7 +118,6 @@ export default class Team {
 
 
         this.canvas.addEventListener("click", () => {
-            console.log("click", this.currentIntersect)
             if(this.currentIntersect){
                 this.teamIndex = this.currentIntersect.object.name.split("team-photo")[1]
                 if(this.teamIndex == 1) window.open("https://www.linkedin.com/in/fran%C3%A7ois-castan-a1bb88235/", '_blank');
