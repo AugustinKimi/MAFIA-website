@@ -168,6 +168,58 @@
 }
 
 
+.presale-container{
+    padding-left: 140px;
+    padding-right: 40px;
+    height: 100px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: .6s ease;
+    position: fixed;
+    bottom: 100px;
+    right: -10px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
+    z-index: 99999;
+}
+
+.presale-container>span{
+    font-size: 20px;
+}
+
+.presale-avatar{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 140%;
+}
+
+.count-down{
+    color: #D7340D;
+    font-weight: bold;
+}
+
+.join-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 30px;
+    background: #D7340D;
+    border-radius: 15px;
+    margin: 0 20px;
+}
+
+.join-button>span{
+    font-family: 'Akira';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 26px;
+    margin-right: 20px;
+}
 
 
 
@@ -178,10 +230,29 @@
     .social-links-hover>*{
         display: none !important;
     }
-}
-
-@media only screen and   (max-width : 600px) {
     .scroll-progress{
         display: none;
+    }
+
+    .presale-container>span,
+    .join-button>span{
+        font-size: 16px;
+    }
+
+    .join-button{
+        padding: 10px 20px;
+    }
+
+    .presale-container{
+        justify-content: center;
+        flex-direction: column;
+        height: 130px;
+    }
+
+    .presale-avatar{
+        height: 120%;
+    }
+    .presale-container>span{
+        margin-bottom: 10px;
     }
 }

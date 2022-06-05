@@ -6,11 +6,13 @@ export default class DomManip{
     constructor(){
         this.twitterLogo = document.querySelector(".social-links-hover .twitter-logo")
         this.linkedinLogo = document.querySelector(".social-links-hover .linkedin-logo")
+        this.START_TIME_PRESALE = 1654537800
 
         this.faqSection()
         this.teamHover()
         this.toggleMobileMenu()
         this.scrollProgress()
+        this.presaleTimer()
         window.requestAnimationFrame(() => this.update())
 
     }
@@ -160,6 +162,31 @@ export default class DomManip{
           });
 
     }
+
+    presaleTimer(){
+        this.timer = document.querySelector('.count-down')
+        setInterval(() => {
+            const timer = this.calculatePrivateTimeLeft()
+            // console.log(`${timer.hours}h ${timer.hours}m ${timer.hours}s`, ti)
+            this.timer.innerHTML = `${timer.hours}h ${timer.minutes}m ${timer.seconds}s`
+        }, 1000);
+    }
+    calculatePrivateTimeLeft () {
+        this.difference = +new Date(this.START_TIME_PRESALE * 1000) - +new Date();
+    
+        this.timeLeft = null;
+        // console.log(this.difference , this.START_TIME_PRESALE)
+    
+        if (this.difference > 0) {
+          this.timeLeft = {
+            hours: Math.floor((this.difference  / (1000 * 60 * 60))),
+            minutes: Math.floor((this.difference  / 1000 / 60) % 60),
+            seconds: Math.floor((this.difference  / 1000) % 60)
+          };
+        }
+        return this.timeLeft
+        
+      };
 
     update(){
         this.twitterLogo.style.left = `${this.cursorX}px`
