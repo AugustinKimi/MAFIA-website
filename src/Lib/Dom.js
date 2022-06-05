@@ -165,10 +165,12 @@ export default class DomManip{
 
     presaleTimer(){
         this.timer = document.querySelector('.count-down')
+        this.presaleSpan = document.querySelector('.presale-container>span')
         setInterval(() => {
             const timer = this.calculatePrivateTimeLeft()
-            // console.log(`${timer.hours}h ${timer.hours}m ${timer.hours}s`, ti)
-            this.timer.innerHTML = `${timer.hours}h ${timer.minutes}m ${timer.seconds}s`
+            if(this.difference <= 0) this.presaleSpan.innerHTML = 'The presale is live now !'
+            else this.timer.innerHTML = `${timer.hours}h ${timer.minutes}m ${timer.seconds}s`
+
         }, 1000);
     }
     calculatePrivateTimeLeft () {
@@ -176,7 +178,7 @@ export default class DomManip{
     
         this.timeLeft = null;
         // console.log(this.difference , this.START_TIME_PRESALE)
-    
+        this.difference = 0
         if (this.difference > 0) {
           this.timeLeft = {
             hours: Math.floor((this.difference  / (1000 * 60 * 60))),
