@@ -177,8 +177,7 @@ export default class DomManip{
         this.difference = +new Date(this.START_TIME_PRESALE * 1000) - +new Date();
     
         this.timeLeft = null;
-        // console.log(this.difference , this.START_TIME_PRESALE)
-        this.difference = 0
+        
         if (this.difference > 0) {
           this.timeLeft = {
             hours: Math.floor((this.difference  / (1000 * 60 * 60))),
