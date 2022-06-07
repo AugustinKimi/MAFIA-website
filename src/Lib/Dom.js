@@ -6,7 +6,7 @@ export default class DomManip{
     constructor(){
         this.twitterLogo = document.querySelector(".social-links-hover .twitter-logo")
         this.linkedinLogo = document.querySelector(".social-links-hover .linkedin-logo")
-        this.START_TIME_PRESALE = 1654537800
+        this.START_TIME_PRESALE = 1654883400
 
         this.faqSection()
         this.teamHover()
@@ -168,8 +168,9 @@ export default class DomManip{
         this.presaleSpan = document.querySelector('.presale-container>span')
         setInterval(() => {
             const timer = this.calculatePrivateTimeLeft()
+            // console.log(timer.day)
             if(this.difference <= 0) this.presaleSpan.innerHTML = 'The presale is live now !'
-            else this.timer.innerHTML = `${timer.hours}h ${timer.minutes}m ${timer.seconds}s`
+            else this.timer.innerHTML = `${timer.days > 0 ? `${timer.days}d ` : ''}${timer.hours}h ${timer.minutes}m ${timer.seconds}s`
 
         }, 1000);
     }
@@ -180,7 +181,8 @@ export default class DomManip{
         
         if (this.difference > 0) {
           this.timeLeft = {
-            hours: Math.floor((this.difference  / (1000 * 60 * 60))),
+            days : Math.floor((this.difference  / (1000 * 60 * 60 * 24))),
+            hours: Math.floor((this.difference  / (1000 * 60 * 60)) % 24),
             minutes: Math.floor((this.difference  / 1000 / 60) % 60),
             seconds: Math.floor((this.difference  / 1000) % 60)
           };
