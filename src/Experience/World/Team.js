@@ -86,7 +86,7 @@ export default class Team {
         gsap.to(this.teamModel.scene.position,
         {
             scrollTrigger : this.scrollTriggerObject1, 
-            x :  6,
+            x :  8,
         })
         this.scrollTriggerObject2 = { 
             trigger : '#team',

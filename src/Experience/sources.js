@@ -51,6 +51,11 @@ export default [
         path: 'textures/team/team-6.webp'
     },
     {
+        name: 'teamTexture7',
+        type: 'texture',
+        path: 'textures/team/team-6.webp'
+    },
+    {
           name: "environmentMapTexture",
           type: "cubeTexture",
           path: [
