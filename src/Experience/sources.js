@@ -53,7 +53,7 @@ export default [
     {
         name: 'teamTexture7',
         type: 'texture',
-        path: 'textures/team/team-6.webp'
+        path: 'textures/team/team-7.webp'
     },
     {
           name: "environmentMapTexture",
