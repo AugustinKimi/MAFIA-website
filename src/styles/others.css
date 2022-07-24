@@ -168,7 +168,7 @@
 }
 
 
-.presale-container{
+.mint-container{
     padding-left: 140px;
     padding-right: 40px;
     height: 100px;
@@ -178,7 +178,7 @@
     justify-content: flex-start;
     transition: .6s ease;
     position: fixed;
-    bottom: 100px;
+    bottom: 40px;
     right: -10px;
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(4px);
@@ -186,11 +186,11 @@
     z-index: 99999;
 }
 
-.presale-container>span{
+.mint-container>span{
     font-size: 20px;
 }
 
-.presale-avatar{
+.mint-avatar{
     position: absolute;
     bottom: 0;
     left: 0;
@@ -246,7 +246,7 @@
         display: none;
     }
 
-    .presale-container>span,
+    .mint-container>span,
     .join-button>span{
         font-size: 16px;
     }
@@ -255,16 +255,16 @@
         padding: 10px 20px;
     }
 
-    .presale-container{
+    .mint-container{
         justify-content: center;
         flex-direction: column;
         height: 130px;
     }
 
-    .presale-avatar{
+    .mint-avatar{
         height: 120%;
     }
-    .presale-container>span{
+    .mint-container>span{
         margin-bottom: 10px;
     }
 }
