@@ -15,16 +15,14 @@ void main(){
 
 
     vec4 modelPosition = modelMatrix * vec4(position, 1.0);
-
-    float fourier = mod(uTime * 0.005 * aRandomSpeed, 100.0) / 100.0;
-    modelPosition.x += sin(uTime * 0.0002 * aRandomSpeed + aOffset) * 0.5;
+    float fourier = mod((uTime) * 0.005 * aRandomSpeed, 100.0) / 100.0;
+    modelPosition.x += sin((uTime) * 0.0002 * aRandomSpeed + aOffset) * 0.5 ;
 
     if(modelPosition.y >= -1.0){
         modelPosition.y = -4.0 ;
     }
 
     modelPosition.y = modelPosition.y + fourier * 4.0;
-
     vec4 viewPosition = viewMatrix * modelPosition;
     vec4 projectionPosition = projectionMatrix * viewPosition;
     gl_Position = projectionPosition;

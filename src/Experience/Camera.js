@@ -17,6 +17,7 @@ export default class Camera
         }
 
         this.setInstance()
+        this.moveCamera()
         // this.setControls()
     }
 
@@ -34,6 +35,8 @@ export default class Camera
         }
     }
 
+    
+
     setControls()
     {
         this.controls = new OrbitControls(this.instance, this.canvas)
@@ -46,8 +49,18 @@ export default class Camera
         this.instance.updateProjectionMatrix()
     }
 
-    update()
-    {
-        // this.controls.update()
+    moveCamera(){
+        this.mouse = new THREE.Vector2()
+
+        window.addEventListener('mousemove', (event) =>
+        {
+            this.mouse.x = event.clientX / this.sizes.width * 2 - 1
+            this.mouse.y = - (event.clientY / this.sizes.height) * 2 + 1
+        })
+    }
+
+    update(){
+        this.instance.position.x = THREE.MathUtils.lerp(this.instance.position.x, (this.mouse.x * Math.PI) / 10, 0.005)
+        this.instance.position.y = THREE.MathUtils.lerp(this.instance.position.y, (this.mouse.y * Math.PI) / 10, 0.005)
     }
 }

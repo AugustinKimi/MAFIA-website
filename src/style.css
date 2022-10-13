@@ -6,8 +6,7 @@
     src: url('../static/fonts/Akira-Expanded-Demo.otf');
 }
 
-
-@import url('./styles/about.css');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');@import url('./styles/about.css');
 @import url('./styles/home.css');
 @import url('./styles/roadmap.css');
 @import url('./styles/faq.css');
@@ -16,7 +15,9 @@
 @import url('./styles/others.css');
 @import url('./styles/playToEarn.css');
 
-
+:root{
+    --b-radius : 5px;
+}
 
 *
 {
@@ -24,7 +25,7 @@
     padding: 0;
     font-family: monospace,Arial, Helvetica, sans-serif;
     box-sizing: border-box;
-    font-weight: 300;
+    font-weight: 500;
     color: white;
     background-color: none;
     text-decoration: none;

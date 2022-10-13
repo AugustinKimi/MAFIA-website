@@ -2,7 +2,6 @@ import * as THREE from 'three'
 import Experience from '../Experience'
 import fragmentShader from '../Shaders/Sparks/fragment.glsl'
 import vertexShader from '../Shaders/Sparks/vertex.glsl'
-
 export default class Sparks{
     constructor(){
         this.experience = new Experience()
@@ -56,6 +55,7 @@ export default class Sparks{
         this.sparksMaterial = new THREE.ShaderMaterial({
             uniforms : {
                 uTime : {value : 0},
+                uVelocity : {value : 1},
                 uColor : { value : new THREE.Color("#ff0000")},
                 uInsideColor : { value : new THREE.Color("#ff3300")},
                 uOutsideColor : {value : new THREE.Color("#FF2600")}
@@ -79,12 +79,13 @@ export default class Sparks{
 
         if(this.debug.active){
 
-            // this.debugFolder.addColor(this.sparksParticules.material.uniforms.uColor, "value").name("uColor")
+            this.debugFolder.add(this.sparksParticules.material.uniforms.uVelocity, "value").min(0).max(2).step(0.001).name("uVelocity")
             this.debugFolder.addColor(this.sparksParticules.material.uniforms.uInsideColor, "value").name("uInsideColor")
             this.debugFolder.addColor(this.sparksParticules.material.uniforms.uOutsideColor, "value").name("uOutsideColor")
         }
 
     }
+
 
     update(){
         this.sparksParticules.material.uniforms.uTime.value = this.time.elapsed
