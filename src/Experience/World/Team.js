@@ -137,7 +137,6 @@ export default class Team {
         this.intersects = this.raycaster.intersectObjects( this.cardArray );
 
         if(this.intersects.length){
-            document.documentElement.style.cursor = "pointer"
             if(!this.currentIntersect){
                 const rotationX = this.intersects[0].object.parent.rotation.x
                 const tl = gsap.timeline()
@@ -152,12 +151,13 @@ export default class Team {
                     duration :0.3
                 })
                 this.currentIndex = this.intersects[0].object.name.split("team-photo")[1]
-                if(this.currentIndex == 1 || this.currentIndex == 2 ){
-                    this.linkedinLogo.style.opacity = 1
-                }
+                // if(this.currentIndex == 1 || this.currentIndex == 2 ){
+                //     this.linkedinLogo.style.opacity = 1
+                // }
 
                 if(this.currentIndex == 3 || this.currentIndex == 4 || this.currentIndex == 6){
                     this.twitterLogo.style.opacity = 1
+                    document.documentElement.style.cursor = "pointer"
                 }
             }
             this.currentIntersect = this.intersects[0]
