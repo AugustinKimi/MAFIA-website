@@ -2,6 +2,8 @@ import * as THREE from 'three'
 import Experience from '../Experience'
 import fragmentShader from '../Shaders/Smokes/fragment.glsl'
 import vertexShader from '../Shaders/Smokes/vertex.glsl'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 
 export default class Smoke {
@@ -14,19 +16,18 @@ export default class Smoke {
         this.sizes = this.experience.sizes
 
         this.setSmokePlane()
+        this.setScrollTrigger()
     }
+
 
     setSmokePlane(){
         this.smokeGeometry = new THREE.PlaneBufferGeometry(this.sizes.width/150, this.sizes.height/150)
-        this.testMaterial = new THREE.MeshBasicMaterial({
-            color : "#000000",
-            // side : THREE.BackSide   
-        })
         this.smokeMaterial = new THREE.ShaderMaterial({
             fragmentShader,
             vertexShader,
             uniforms : {
-                uTime : {value : 0}
+                uTime : {value : 0},
+                uProgress : {value : 0.5}  
             },
             transparent :true,
             blending : THREE.AdditiveBlending
@@ -37,11 +38,28 @@ export default class Smoke {
             this.smokeGeometry,
             this.smokeMaterial
         )
-        // this.smokes.scale.set(0.5, 0.5, 0.5)
         this.smokes.position.y = 0
         this.smokes.position.z = -1.9
 
         this.scene.add(this.smokes)
+    }
+
+
+    setScrollTrigger() {
+        gsap.registerPlugin(ScrollTrigger)
+        gsap.to(this.smokes.material.uniforms.uProgress,
+            {
+                scrollTrigger : {
+                    trigger : "#about",
+                    start : "top top",
+                    endTrigger : "#team",
+                    end : "bottom top",
+                    markers : true,
+                    // end : "bottom bottom",
+                    scrub : 1
+                },
+                value : 1
+            })
     }
 
     update(){

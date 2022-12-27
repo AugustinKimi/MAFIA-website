@@ -11,8 +11,8 @@ uniform vec3 uProgressColor;
 void main() {
     vec2 newUv = vUv;
     float strength = 0.05 / (distance(vec2(newUv.x, (newUv.y + 0.3) * 1.2), vec2(0.5, 0.5)) * 0.5) - 0.3;
-    vec3 progressColor = mix(uDarkColor, uAccentColor, uProgress);
-    vec3 mixedColor = mix(uDarkColor, uAccentColor, strength );
+    // vec3 progressColor = mix(uDarkColor, uAccentColor, uProgress);
+    vec3 mixedColor = mix(uDarkColor, uAccentColor, strength ) * uProgress;
 
     gl_FragColor = vec4(mixedColor, 1.0);
 }

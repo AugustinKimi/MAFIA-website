@@ -37,7 +37,7 @@ export default class RedBackground{
                 uTime : {value : this.time},
                 uDarkColor : {value : new THREE.Color("#110000")},
                 uAccentColor : {value : new THREE.Color("#FF0000")},
-                uProgress : {value : 1}
+                uProgress : {value : 0.5}
             },
             // side : THREE.BackSide
         })
@@ -62,9 +62,12 @@ export default class RedBackground{
         gsap.to(this.backgroundMesh.material.uniforms.uProgress,
             {
                 scrollTrigger : {
-                    trigger : "body",
+                    trigger : "#about",
                     start : "top top",
-                    end : "bottom bottom",
+                    endTrigger : "#team",
+                    end : "bottom top",
+                    markers : true,
+                    // end : "bottom bottom",
                     scrub : 1
                 },
                 value : 1
