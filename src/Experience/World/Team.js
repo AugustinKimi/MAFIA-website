@@ -120,12 +120,11 @@ export default class Team {
         this.canvas.addEventListener("click", () => {
             if(this.currentIntersect){
                 this.teamIndex = this.currentIntersect.object.name.split("team-photo")[1]
-                if(this.teamIndex == 1) window.open("https://www.linkedin.com/in/fran%C3%A7ois-castan-a1bb88235/", '_blank');
-                if(this.teamIndex == 2) window.open("https://www.linkedin.com/in/george-miller-95393b236", '_blank');
+                console.log(this.teamIndex)
                 if(this.teamIndex == 3) window.open("https://twitter.com/05Yugi", '_blank');
                 if(this.teamIndex == 4) window.open("https://twitter.com/Voster_", '_blank');
                 if(this.teamIndex == 6) window.open("https://twitter.com/strawhat595", '_blank');
-                // if(this.teamIndex == 5) window.open("https://youtube.com#5", '_blank');
+                if(this.teamIndex == 7) window.open("https://www.linkedin.com/in/pierre-lucas-6752a8176/", '_blank');
             }
         })
     }
@@ -137,7 +136,6 @@ export default class Team {
         this.intersects = this.raycaster.intersectObjects( this.cardArray );
 
         if(this.intersects.length){
-            document.documentElement.style.cursor = "pointer"
             if(!this.currentIntersect){
                 const rotationX = this.intersects[0].object.parent.rotation.x
                 const tl = gsap.timeline()
@@ -152,11 +150,15 @@ export default class Team {
                     duration :0.3
                 })
                 this.currentIndex = this.intersects[0].object.name.split("team-photo")[1]
-                if(this.currentIndex == 1 || this.currentIndex == 2 ){
+
+
+                document.documentElement.style.cursor = "initial"
+                if(this.currentIndex == 7){
+                    document.documentElement.style.cursor = "pointer"
                     this.linkedinLogo.style.opacity = 1
                 }
-
                 if(this.currentIndex == 3 || this.currentIndex == 4 || this.currentIndex == 6){
+                    document.documentElement.style.cursor = "pointer"
                     this.twitterLogo.style.opacity = 1
                 }
             }
