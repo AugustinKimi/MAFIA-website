@@ -54,8 +54,6 @@ export default class Smoke {
                     start : "top top",
                     endTrigger : "#team",
                     end : "bottom top",
-                    markers : true,
-                    // end : "bottom bottom",
                     scrub : 1
                 },
                 value : 1
