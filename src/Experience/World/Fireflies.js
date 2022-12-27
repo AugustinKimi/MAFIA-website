@@ -53,7 +53,7 @@ export default class Fireflies {
         this.positionArray[i * 3 + 1] = (Math.random() - 0.5) * 6;
         this.positionArray[i * 3 + 2] = Math.random() * 2;
 
-        this.scaleArrary[i] = Math.random();
+        this.scaleArrary[i] = Math.random() * 0.5 + 0.5;
       }
 
       this.firefliesGeometry.setAttribute(
@@ -69,10 +69,10 @@ export default class Fireflies {
       this.firefliesMaterial = new THREE.ShaderMaterial({
         uniforms: {
           uPixelRatio: { value: Math.min(window.devicePixelRatio, 2) },
-          uSize: { value: 100 },
+          uSize: { value: 40 },
           uTime: { value: 0 },
-          uInsideColor : { value : new THREE.Color("#ffd257")},
-          uOutsideColor : { value : new THREE.Color("#637d08")}
+          uInsideColor : { value : new THREE.Color("#ff9924")},
+          uOutsideColor : { value : new THREE.Color("#ff3300")}
         },
         vertexShader ,
         fragmentShader,

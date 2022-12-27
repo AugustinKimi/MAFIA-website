@@ -21,8 +21,8 @@ export default class MovingLight {
 
 
     setLight(){
-        this.light = new THREE.PointLight("#c7c7c7", 0.7)
-        this.light.position.set(0, 0, 3)
+        this.light = new THREE.PointLight("#191b33", 10)
+        this.light.position.set(0, 0, 4)
         if(this.debug.active){
             this.debugFolder.add(this.light.position, "z").min(-10).max(10).step(0.01)
             this.debugFolder.add(this.light, "intensity").min(0).max(50).step(0.01)
