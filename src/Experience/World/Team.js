@@ -120,7 +120,6 @@ export default class Team {
         this.canvas.addEventListener("click", () => {
             if(this.currentIntersect){
                 this.teamIndex = this.currentIntersect.object.name.split("team-photo")[1]
-                console.log(this.teamIndex)
                 if(this.teamIndex == 3) window.open("https://twitter.com/05Yugi", '_blank');
                 if(this.teamIndex == 4) window.open("https://twitter.com/Voster_", '_blank');
                 if(this.teamIndex == 6) window.open("https://twitter.com/strawhat595", '_blank');
