@@ -6,13 +6,13 @@ export default class DomManip{
     constructor(){
         this.twitterLogo = document.querySelector(".social-links-hover .twitter-logo")
         this.linkedinLogo = document.querySelector(".social-links-hover .linkedin-logo")
-        this.START_TIME_PRESALE = 1654883400
+        this.START_TIME_PRESALE = 167028000
 
         this.faqSection()
         this.teamHover()
         this.toggleMobileMenu()
         this.scrollProgress()
-        // this.presaleTimer()
+        this.presaleTimer()
         window.requestAnimationFrame(() => this.update())
 
     }
@@ -163,17 +163,17 @@ export default class DomManip{
 
     }
 
-    // presaleTimer(){
-    //     this.timer = document.querySelector('.count-down')
-    //     this.presaleSpan = document.querySelector('.presale-container>span')
-    //     setInterval(() => {
-    //         const timer = this.calculatePrivateTimeLeft()
-    //         // console.log(timer.day)
-    //         if(this.difference <= 0) this.presaleSpan.innerHTML = 'The presale is live now !'
-    //         else this.timer.innerHTML = `${timer.days > 0 ? `${timer.days}d ` : ''}${timer.hours}h ${timer.minutes}m ${timer.seconds}s`
+    presaleTimer(){
+        this.timer = document.querySelector('.count-down')
+        this.presaleSpan = document.querySelector('.presale-container>span')
+        setInterval(() => {
+            const timer = this.calculatePrivateTimeLeft()
+            // console.log(timer.day)
+            if(this.difference <= 0) this.presaleSpan.innerHTML = 'The mint is live now !'
+            else this.timer.innerHTML = `${timer.days > 0 ? `${timer.days}d ` : ''}${timer.hours}h ${timer.minutes}m ${timer.seconds}s`
 
-    //     }, 1000);
-    // }
+        }, 1000);
+    }
     calculatePrivateTimeLeft () {
         this.difference = +new Date(this.START_TIME_PRESALE * 1000) - +new Date();
     
