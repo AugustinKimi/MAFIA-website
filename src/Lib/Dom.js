@@ -6,7 +6,7 @@ export default class DomManip{
     constructor(){
         this.twitterLogo = document.querySelector(".social-links-hover .twitter-logo")
         this.linkedinLogo = document.querySelector(".social-links-hover .linkedin-logo")
-        this.START_TIME_MINT = 1665770400
+        this.START_TIME_MINT = 1673028000
 
         this.faqSection()
         this.teamHover()
