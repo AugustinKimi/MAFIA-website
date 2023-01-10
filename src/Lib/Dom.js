@@ -1,6 +1,6 @@
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import mindMapData from '../data/mindmap.json'
 
 export default class DomManip{
     constructor(){
@@ -12,10 +12,45 @@ export default class DomManip{
         this.teamHover()
         this.toggleMobileMenu()
         this.scrollProgress()
-        this.mintTimer()
+        this.mindmapMobile()
+        // this.mintTimer()
         window.requestAnimationFrame(() => this.update())
 
     }
+
+
+    mindmapMobile(){
+        this.mindCards = Array.from(document.querySelectorAll(".mind-card"))
+        this.mindCards.forEach((card, index) => {
+            const text = card.querySelector(".mind-text")
+            text.innerHTML = mindMapData[index].content
+
+            const animateCards = (e) => {
+                if(window.innerWidth > 800) return
+                this.mindCards.forEach((mindCard, index) => {
+                    if(mindCard.classList.contains("active")){
+                        mindCard.classList.remove("active")
+                        gsap.to(mindCard,{
+                            maxHeight : '140px',
+                            duration : 0.6,
+                            ease : "expo"
+                        })
+                    }
+                });
+
+                if(card.classList.contains('active')) return
+                card.classList.add("active")
+                gsap.to(card,{
+                    maxHeight : card.scrollHeight,
+                    duration : 0.6,
+                    ease : "expo"
+                })
+            }
+
+            card.addEventListener("click", animateCards)
+        });
+    }
+
     faqSection(){
         this.questions = Array.from(document.querySelectorAll(".question"))
         this.questionButtons = Array.from(document.querySelectorAll(".faq-title-container"))
@@ -190,6 +225,8 @@ export default class DomManip{
         return this.timeLeft
         
       };
+
+    
 
     update(){
         this.twitterLogo.style.left = `${this.cursorX}px`

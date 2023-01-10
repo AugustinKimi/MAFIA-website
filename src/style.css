@@ -8,7 +8,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');@import url('./styles/about.css');
 @import url('./styles/home.css');
-@import url('./styles/roadmap.css');
+@import url('./styles/mindmap.css');
 @import url('./styles/faq.css');
 @import url('./styles/joinDiscord.css');
 @import url('./styles/navbar.css');
@@ -41,7 +41,7 @@ html,
 body
 {
     background: black;
-    scroll-behavior: smooth;
+    scroll-behavior: initial;
     /* cursor: none; */
 }
 

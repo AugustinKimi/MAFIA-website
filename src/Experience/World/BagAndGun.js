@@ -65,7 +65,7 @@ export default class BagAndGun {
         const gunTl = gsap.timeline({scrollTrigger : { 
             trigger : '#about-section',
             start : "bottom center",
-            endTrigger : "#roadmap",
+            endTrigger : "#mindmap",
             end : "130% top",
             toggleActions : "reverse none reverse none",
             scrub : 1,
@@ -93,7 +93,7 @@ export default class BagAndGun {
         const bagTl = gsap.timeline({scrollTrigger : { 
             trigger : '#about-section',
             start : "bottom center",
-            endTrigger : "#roadmap",
+            endTrigger : "#mindmap",
             end : "130% top",
             toggleActions : "reverse none reverse none",
             scrub : 1,

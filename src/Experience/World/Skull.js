@@ -48,7 +48,7 @@ export default class Skull{
             scrollTrigger : { 
                 trigger : '#about-section',
                 start : "bottom center",
-                endTrigger : "#roadmap",
+                endTrigger : "#mindmap",
                 end : "130% top",
                 toggleActions : "reverse none reverse none",
                 scrub : 1,

@@ -1,11 +1,9 @@
 #about-section{
-    position: relative;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     margin-top: 0 ;
-    height: 150vh;
-    margin-bottom: 100vh;
+    height: 100vh;
     overflow: initial;
 }
 
@@ -17,12 +15,10 @@
 
 
 #about-section .sticky-container{
-    position: sticky;
-    top: 50%;
-    transform: translateY(-50%);
+    height: 100%;
     width: 100%;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
 }
 

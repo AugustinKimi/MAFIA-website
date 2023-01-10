@@ -1,0 +1,157 @@
+#mindmap{
+    display: flex;
+    flex-direction: column;
+}
+
+.mindmap-title{
+    margin-bottom: 40px;
+    align-self: flex-start;
+    font-size: 40px;
+    font-family: 'Akira', 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.mind-cards-container{
+    display : flex; 
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    gap: 40px;
+}
+
+.mind-card{
+    position: relative;
+    top: 0;
+    left: 0;
+    flex : 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 20px;
+    background : rgb(19 19 19 / 65%);
+    max-height: 140px;
+    overflow: hidden;
+    border-radius: 24px;
+    transition: .6s ease;
+}
+
+.mind-title-container{
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+}
+
+
+.mind-index{
+    z-index: 1;
+    font-family: 'Akira';
+    font-weight: 800;
+    font-size: 48px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.mind-title{
+    z-index: 1;
+    font-family: 'Akira';
+    font-weight: 800;
+    font-size: 16px;
+}
+
+.mind-illustration{
+    height: 200px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: 0.4;
+    transition: .6s ease;
+}
+
+.mind-card.active{
+    background: rgba(217, 53, 15, 0.75);
+}
+.mind-card.active .mind-illustration{
+    opacity: 1;
+}
+
+
+.current-mind-container{
+    padding : 40px;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 24px;
+    max-height: 480px;
+    padding-bottom: 120px;
+    background : rgb(19 19 19 / 65%);
+    overflow: hidden;
+}
+.current-mind-title{
+    margin-bottom: 40px;
+    align-self: flex-start;
+    font-size: 40px;
+    font-family: 'Akira', 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.current-mind-text{
+    max-width: 80%;
+}
+
+.current-mind-index{
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 1;
+    font-family: 'Akira';
+    font-weight: 800;
+    font-size: 48px;
+    color: rgba(255, 255, 255, 0.4);
+
+}
+
+.current-mind-illustration{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+}
+
+.current-mind-text strong, .mind-text strong{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.mind-text{
+    display: none;
+}
+
+
+
+@media only screen and   (max-width : 800px) {
+    .mind-cards-container{
+        flex-direction: column;
+    }
+
+    .mind-text{
+        display: block;
+        margin-top: 40px;
+    }
+
+    .mind-card{
+        width: 100%;
+        justify-content: flex-start;
+        cursor: pointer;
+    }
+
+    .current-mind-container{
+        display: none;
+    }
+    
+}
