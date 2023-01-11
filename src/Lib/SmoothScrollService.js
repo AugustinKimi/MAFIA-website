@@ -15,7 +15,6 @@ class SmoothScroll{
             smoothTouch: false,
             touchMultiplier: 2,
           })
-          //get scroll value
           requestAnimationFrame(this.raf)
     }
 

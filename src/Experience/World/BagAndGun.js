@@ -1,4 +1,3 @@
-import * as THREE from 'three'
 import Experience from '../Experience'
 import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -20,7 +19,12 @@ export default class BagAndGun {
         }
         this.setBag ()
         this.setGun()
-        this.setScrollTrigger()
+        setTimeout(() => {
+            
+            this.bagModel.scene.position.set(2.53, -0.09, 1.8)
+            this.gunModel.scene.position.set(2.59, 0.08, 1.19)
+            this.setScrollTrigger()
+        }, 400);
     }
 
     setBag(){
@@ -28,7 +32,7 @@ export default class BagAndGun {
         this.bagModel.scene.scale.set(0.2, 0.2, 0.2)
 
 
-        this.bagModel.scene.position.set(2.53, -0.09, 1.8)
+        this.bagModel.scene.position.set(0,0,0)
         this.bagModel.scene.rotation.set(0.45, -0.53, 0.08)
         
         if(this.debug.active ){
@@ -47,7 +51,7 @@ export default class BagAndGun {
         this.gunModel.scene.scale.set(0.2, 0.2, 0.2)
 
 
-        this.gunModel.scene.position.set(2.59, 0.08, 1.19)
+        this.gunModel.scene.position.set(0,0,0)
         this.gunModel.scene.rotation.set(2.79, 0.94, 4.02)
         if(this.debug.active){
             this.debugFolder.add(this.gunModel.scene.position, "x").min(-5).max(5).step(0.01).name("Gun position x")
@@ -64,9 +68,9 @@ export default class BagAndGun {
         gsap.registerPlugin(ScrollTrigger)
         const gunTl = gsap.timeline({scrollTrigger : { 
             trigger : '#about-section',
-            start : "bottom center",
+            start : "top top",
             endTrigger : "#mindmap",
-            end : "130% top",
+            end : `${window.innerWidth > 800 ? "+=1000%" : "bottom"} top`,
             toggleActions : "reverse none reverse none",
             scrub : 1,
         }} )
@@ -92,9 +96,9 @@ export default class BagAndGun {
 
         const bagTl = gsap.timeline({scrollTrigger : { 
             trigger : '#about-section',
-            start : "bottom center",
+            start : "top top",
             endTrigger : "#mindmap",
-            end : "130% top",
+            end : `${window.innerWidth > 800 ? "+=1000%" : "bottom"} top`,
             toggleActions : "reverse none reverse none",
             scrub : 1,
         }} )

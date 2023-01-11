@@ -2,12 +2,12 @@ export default [
     {
         name: 'gunModel',
         type: 'gltfModel',
-        path: 'models/thomson/thomson.gltf'
+        path: 'models/thomson/thomson-test.glb'
     },
     {
         name: 'bagModel',
         type: 'gltfModel',
-        path: 'models/bag/bag.gltf'
+        path: 'models/bag/bag-test.glb'
     },
     {
         name: 'teamModel',
@@ -18,7 +18,7 @@ export default [
     {
         name: 'skullModel',
         type: 'gltfModel',
-        path: 'models/skull/skull.gltf'
+        path: 'models/skull/skull-test.glb'
     },
     {
         name: 'teamTexture1',

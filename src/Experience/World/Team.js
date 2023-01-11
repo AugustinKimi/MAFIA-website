@@ -23,14 +23,17 @@ export default class Team {
         }
 
         this.setTeam()
-        this.setScrollTrigger()
+        setTimeout(() => {
+            this.teamModel.scene.position.set(-5, -2, 0)
+            this.setScrollTrigger()
+        }, 400);
         this.setCardInteration()
     }
 
     setTeam(){
         this.teamModel = this.resources.items.teamModel
         // this.teamModel.scene.rotation.y = Math.PI * 0.5
-        this.teamModel.scene.position.set(-5, -2, 0)
+        this.teamModel.scene.position.set(0, 0, 0)
         this.teamModel.scene.scale.set(1.3 ,1.3 ,1.5 )
         
         this.cardArray = []
@@ -87,6 +90,7 @@ export default class Team {
         {
             scrollTrigger : this.scrollTriggerObject1, 
             x :  8,
+            ease : "linear"
         })
         this.scrollTriggerObject2 = { 
             trigger : '#team',
@@ -101,6 +105,7 @@ export default class Team {
             {
                 scrollTrigger : this.scrollTriggerObject2, 
                 y :  0.6,
+                ease : "linear"
             })
     }
 

@@ -136,7 +136,7 @@ export default class DomManip{
         this.scrollPoints = []
         this.pointLinkProgress = []
 
-        for (let i = 0; i < this.sections.length; i++) {
+        for (let i = 1; i < this.sections.length; i++) {
             const element = this.sections[i]
             const point = document.createElement("a")
             point.setAttribute("href", `#${element.dataset.sectionName}`)

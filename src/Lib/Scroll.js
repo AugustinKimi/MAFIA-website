@@ -11,6 +11,7 @@ export default class Scroll{
         SmoothScrollService.stop()
         this.landingIsDiplay = true
         this.setHomePageWheelEvent()
+        this.setHomePageToucheMoveEvent()
         this.aboutPage()
         this.playToEarnTitle()
         if(window.innerWidth > 800){
@@ -41,6 +42,23 @@ export default class Scroll{
             if(window.scrollY === 0 && e.deltaY > 0 && this.landingIsDiplay){
                 this.homePageAnimation("out")
             }
+        })
+    }
+
+    setHomePageToucheMoveEvent(){
+        let lastY;
+        window.addEventListener("touchmove", (e) => {
+
+            var currentY = e.touches[0].clientY;
+            console.log(SmoothScrollService.lenis)
+            if(window.scrollY === 0 && currentY > lastY ){
+                if(!SmoothScrollService.lenis.stopped) SmoothScrollService.stop()
+                this.homePageAnimation("in")
+            }
+            if(window.scrollY === 0 && currentY < lastY && this.landingIsDiplay){
+                this.homePageAnimation("out")
+            }
+            lastY = currentY;
         })
     }
 
@@ -144,7 +162,7 @@ export default class Scroll{
             scrollTrigger : {
                 trigger : '#mindmap',
                 start : "center center ",
-                end : "+=4000px top",
+                end : "+=600% top",
                 pin : true,
                 toggleActions : "reverse none reverse none",
                 onUpdate : (e) => {
