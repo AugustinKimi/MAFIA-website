@@ -204,23 +204,23 @@ export default class Scroll{
         this.mindMapIllustration = document.querySelector(".current-mind-illustration")
         const tl = gsap.timeline()
         tl
-        .to(this.mindMapIllustration, {
-            filter : "blur(40px)",
+        .to([this.mindMapIllustration, this.mindMapText, this.mindMapTitle], {
+            filter : "blur(30px)",
             duration : 0.25,
             onComplete : () => {
                 this.mindMapIllustration.setAttribute("src", mindMapData[mindIndex].illustrationPath)
+                this.mindMapTitle.innerHTML = `${mindMapData[mindIndex].title}`
+                this.mindMapText.innerHTML = `${mindMapData[mindIndex].content}`
+                this.mindMapIndex.innerHTML = `${mindMapData[mindIndex].index}`
             },
             ease : "expo.in"
         })
-        .to(this.mindMapIllustration,{
+        .to([this.mindMapIllustration, this.mindMapText, this.mindMapTitle, this.mindMapIndex],{
             filter : "blur(0px)",
             duration : 0.4,
             ease : "expo.out"
         })
 
-        this.mindMapTitle.innerHTML = `${mindMapData[mindIndex].title}`
-        this.mindMapText.innerHTML = `${mindMapData[mindIndex].content}`
-        this.mindMapIndex.innerHTML = `${mindMapData[mindIndex].index}`
     }
 
     mindmapSection(){

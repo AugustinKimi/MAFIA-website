@@ -4,7 +4,7 @@
 }
 
 .mindmap-title{
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     align-self: flex-start;
     font-size: 40px;
     font-family: 'Akira', 'Poppins', Arial, Helvetica, sans-serif;
@@ -61,11 +61,11 @@
 }
 
 .mind-illustration{
-    height: 200px;
+    height: 120px;
     position: absolute;
     bottom: 0;
     right: 0;
-    opacity: 0.4;
+    opacity: 0.2;
     transition: .6s ease;
 }
 
@@ -88,13 +88,13 @@
     margin-top: 20px;
     width: 100%;
     border-radius: 24px;
-    max-height: 480px;
-    padding-bottom: 120px;
+    height: 460px;
+    padding-bottom: 80px;
     background : rgb(19 19 19 / 65%);
     overflow: hidden;
 }
 .current-mind-title{
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     align-self: flex-start;
     font-size: 40px;
     font-family: 'Akira', 'Poppins', Arial, Helvetica, sans-serif;
@@ -106,13 +106,14 @@
 
 .current-mind-index{
     position: absolute;
-    bottom: 40px;
+    bottom: 20px;
     left: 40px;
     z-index: 1;
     font-family: 'Akira';
     font-weight: 800;
-    font-size: 48px;
-    color: rgba(255, 255, 255, 0.4);
+    font-size: 98px;
+    line-height: 66%;
+    color: rgba(255, 255, 255, 0.1);
 
 }
 
@@ -120,7 +121,8 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    height: 100%;
+    height: 80%;
+    opacity: 0.2;
 }
 
 .current-mind-text strong, .mind-text strong{

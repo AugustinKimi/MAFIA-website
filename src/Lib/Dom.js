@@ -1,6 +1,7 @@
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import mindMapData from '../data/mindmap.json'
+import SmoothScrollService from './SmoothScrollService';
 
 export default class DomManip{
     constructor(){
@@ -14,10 +15,20 @@ export default class DomManip{
         this.scrollProgress()
         this.mindmapMobile()
         // this.mintTimer()
+        this.scrollToSection()
         window.requestAnimationFrame(() => this.update())
 
     }
 
+    scrollToSection(){
+        this.links = Array.from(document.querySelectorAll(".link"))
+        this.links.forEach((element, index) => {
+            element.addEventListener("click", () => {
+                if(SmoothScrollService.lenis.stopped) SmoothScrollService.resume()
+                SmoothScrollService.lenis.scrollTo(element.dataset.sectionId)
+            })
+        });
+    }
 
     mindmapMobile(){
         this.mindCards = Array.from(document.querySelectorAll(".mind-card"))
