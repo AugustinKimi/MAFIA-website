@@ -162,7 +162,7 @@ export default class Scroll{
             scrollTrigger : {
                 trigger : '#mindmap',
                 start : "center center ",
-                end : "+=600% top",
+                end : "+=550% top",
                 pin : true,
                 toggleActions : "reverse none reverse none",
                 onUpdate : (e) => {

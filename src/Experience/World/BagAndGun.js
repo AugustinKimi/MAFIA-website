@@ -70,7 +70,7 @@ export default class BagAndGun {
             trigger : '#about-section',
             start : "top top",
             endTrigger : "#mindmap",
-            end : `${window.innerWidth > 800 ? "+=1000%" : "bottom"} top`,
+            end : `${window.innerWidth > 900 ? "+=800%" : "bottom"} top`,
             toggleActions : "reverse none reverse none",
             scrub : 1,
         }} )
@@ -98,7 +98,7 @@ export default class BagAndGun {
             trigger : '#about-section',
             start : "top top",
             endTrigger : "#mindmap",
-            end : `${window.innerWidth > 800 ? "+=1000%" : "bottom"} top`,
+            end : `${window.innerWidth > 800 ? "+=900%" : "bottom"} top`,
             toggleActions : "reverse none reverse none",
             scrub : 1,
         }} )

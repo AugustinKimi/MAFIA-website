@@ -67,6 +67,18 @@ export default class DomManip{
         this.questionButtons = Array.from(document.querySelectorAll(".faq-title-container"))
         this.questionButtons.forEach((element, key) => {
             element.addEventListener('click', () => {
+                if(!this.questions[key].classList.contains("isOpen")) gsap.to(this.questions[key], {
+                    maxHeight : this.questions[key].scrollHeight,
+                    duration :  0.6,
+                    ease : "expo"
+
+                })
+                else gsap.to(this.questions[key], {
+                    maxHeight : "60px",
+                    duration :  0.6,
+                    ease : "expo"
+
+                })
                 this.questions[key].classList.toggle("isOpen")
             })
         });

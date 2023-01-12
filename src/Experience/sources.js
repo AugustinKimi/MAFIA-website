@@ -23,27 +23,27 @@ export default [
     {
         name: 'teamTexture1',
         type: 'texture',
-        path: 'textures/team/team-1.png'
+        path: 'textures/team/team-1.webp'
     },
     {
         name: 'teamTexture2',
         type: 'texture',
-        path: 'textures/team/team-2.png'
+        path: 'textures/team/team-2.webp'
     },
     {
         name: 'teamTexture3',
         type: 'texture',
-        path: 'textures/team/team-3.png'
+        path: 'textures/team/team-3.webp'
     },
     {
         name: 'teamTexture4',
         type: 'texture',
-        path: 'textures/team/team-4.png'
+        path: 'textures/team/team-4.webp'
     },
     {
         name: 'teamTexture5',
         type: 'texture',
-        path: 'textures/team/team-5.png'
+        path: 'textures/team/team-5.webp'
     },
     {
         name: 'teamTexture6',

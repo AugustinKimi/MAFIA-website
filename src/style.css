@@ -16,7 +16,7 @@
 @import url('./styles/playToEarn.css');
 
 :root{
-    --b-radius : 5px;
+    --b-radius : 20px;
 }
 
 *

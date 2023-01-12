@@ -78,7 +78,7 @@
 
 
 .current-mind-container{
-    padding : 40px;
+    padding : 20px;
     position: relative;
     top: 0;
     left: 0;
@@ -102,12 +102,13 @@
 
 .current-mind-text{
     max-width: 80%;
+    color :#b4b4b4;
 }
 
 .current-mind-index{
     position: absolute;
     bottom: 20px;
-    left: 40px;
+    left: 20px;
     z-index: 1;
     font-family: 'Akira';
     font-weight: 800;
@@ -144,6 +145,10 @@
     .mind-text{
         display: block;
         margin-top: 40px;
+    }
+
+    .mind-card.active .mind-illustration{
+        opacity: 0.2;
     }
 
     .mind-card{
