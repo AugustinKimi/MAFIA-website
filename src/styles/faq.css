@@ -119,23 +119,14 @@
 
 .answer{
     padding: 10px 20px;
-    color: #b4b4b4;;
+    color: #b4b4b4;
 }
 
 .answer a{
     position: relative;
     font-weight: bold;
-    color: #b4b4b4;;
-}
-
-.answer a:after{
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -2px;
-    height: 2px;
-    background: #b4b4b4;;
+    color: #b4b4b4;
+    text-decoration: underline;
 }
 
 
