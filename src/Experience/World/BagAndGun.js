@@ -90,7 +90,7 @@ export default class BagAndGun {
         }, ">-70")
         .to(this.gunModel.scene.position,
             {
-                y : 2,
+                y : 2.1,
                 duration : 30,
             })
 
