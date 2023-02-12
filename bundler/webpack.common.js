@@ -22,18 +22,18 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, '../src/index.html'),
             minify: true,
-            // meta: {
-            //     'description': { name: 'description', content: "Elrond Mafia is a 2D collection of 5555 Mobsters from Elrond City. The rest of the world see us as criminal, we are just building Web 3. Who's ready to be a part of the story ?" },
-            //     'og:title': { property: 'og:title', content: "Elrond Mafia" },
-            //     'og:description': { property: 'og:description', content: "Elrond Mafia is a 2D collection of 5555 Mobsters from Elrond City. The rest of the world see us as criminal, we are just building Web 3. Who's ready to be a part of the story ?" },
-            //     'og:type': { property: 'og:type', content: 'website' },
-            //     'og:url': { property: 'og:url', content: "https://elrond-mafia.com" },
-            //     'og:image': { property: 'og:image', content: "./images/link-img.png" },
-            //     'twitter:card': { name: 'twitter:card', content: 'summary_large_image' },
-            //     'twitter:title': { name: 'twitter:title', content: "Elrond Mafia" },
-            //     'twitter:description': { name: 'twitter:description', content: "Elrond Mafia is a 2D collection of 5555 Mobsters from Elrond City. The rest of the world see us as criminal, we are just building Web 3. Who's ready to be a part of the story ?" },
-            //     'twitter:image': { name: 'twitter:image', content: "./images/link-img.png" }
-            //   }
+            meta: {
+                'description': { name: 'description', content: "Elrond Mafia is a 2D collection of 5555 Mobsters from Elrond City. The rest of the world see us as criminal, we are just building Web 3. Who's ready to be a part of the story ?" },
+                'og:title': { property: 'og:title', content: "Elrond Mafia" },
+                'og:description': { property: 'og:description', content: "Elrond Mafia is a 2D collection of 5555 Mobsters from Elrond City. The rest of the world see us as criminal, we are just building Web 3. Who's ready to be a part of the story ?" },
+                'og:type': { property: 'og:type', content: 'website' },
+                'og:url': { property: 'og:url', content: "https://elrond-mafia.com" },
+                'og:image': { property: 'og:image', content: "/images/link-img.png" },
+                'twitter:card': { name: 'twitter:card', content: 'summary_large_image' },
+                'twitter:title': { name: 'twitter:title', content: "Elrond Mafia" },
+                'twitter:description': { name: 'twitter:description', content: "Elrond Mafia is a 2D collection of 5555 Mobsters from Elrond City. The rest of the world see us as criminal, we are just building Web 3. Who's ready to be a part of the story ?" },
+                'twitter:image': { name: 'twitter:image', content: "/images/link-img.png" }
+              }
         }),
         new MiniCSSExtractPlugin()
     ],
