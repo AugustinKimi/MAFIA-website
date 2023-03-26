@@ -21,6 +21,7 @@ export default class Scroll{
         this.resize()
         this.teamPage()
         this.faqPage()
+        this.setNavbarLinkClickEvent()
     }
 
     resize(){
@@ -44,6 +45,17 @@ export default class Scroll{
             }
         })
     }
+
+    setNavbarLinkClickEvent(){
+        const navbarLinks = Array.from(document.querySelectorAll(".link"))
+        navbarLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+                SmoothScrollService.resume()
+                this.homePageAnimation("out")
+            })
+        })
+    }
+    
 
     setHomePageToucheMoveEvent(){
         let lastY;
